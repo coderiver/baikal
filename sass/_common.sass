@@ -47,24 +47,326 @@
 // p
 // 	+jpg(bla)
 
+// first element
+=first
+	&:first-child
+		margin: 0
+
+// dashed mix
+=dotted($bd-color)
+	color: $bd-color
+	border-color: $bd-color
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=cyrillic,cyrillic-ext,latin")
 
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
+	font-family: 'Open Sans', sans-serif
+	font-size: 15px
+	font-weight: 300
 	line-height: 1.4
+	a
+		color: #fff
+		+transition(all .1s linear)
 
+// icons
+.ico
+	display: inline-block
+	&.ico_f
+		+s(ico-f)
+	&.ico_tw
+		+s(ico-tw)
+	&.ico_in
+		+s(ico-in)
+	&.ico_vk
+		+s(ico-vk)
+
+// buttons
+.btn
+	position: relative
+	padding: 0 22px
+	height: 29px
+	line-height: 25px
+	color: #fff
+	letter-spacing: 0.8px
+	border: 2px solid #f6f8fa
+	border-radius: 29px
+	background: none
+	+box
+	+transition(all .1s linear)
+	&:hover
+		color: #0f98f2
+		border-color: #0f98f2
+button.btn
+	line-height: 1
+
+// dashed
+.dotted
+	line-height: 1.1
+	border-bottom-width: 1px
+	border-style: dotted
+	background: none
+	vertical-align: middle
+	display: inline-block
+	&:hover
+		border: none
+	&.dotted_white
+		+dotted(#fff)
 
 // common blocks      
 
+// out
+.out
+	padding-bottom: 94px
+	min-height: 100%
+	+box
 
+// header
+.header
+	height: 131px
+	color: #fff
+	background: url(../img/header-bg.png) no-repeat 50% 50% 
+	background-size: cover
+	// +background-image(linear-gradient(left, #a5d165 40%, #69b0cc 100%))
+	+box
+	.header__in
+		position: relative
+		padding-top: 10px
+		padding-left: 344px
+	.header__top
+		+clr
+	.header__info
+		margin: 2px 8px 0 0
+		font-size: 15px
+		font-weight: 600
+	.btn
+		float: right
+	.header__info,
+	.lang,
+	.search
+		vertical-align: top
+		display: inline-block
 
+// logo
+.logo
+	position: absolute
+	top: 19px
+	left: 3px
+	+s(logo-big)
 
+// search
+.search
+	position: relative
+	margin-left: 45px
+	&.is-active
+		.search__input
+			width: 658px
+			+opacity(1)
+			z-index: 2
+		.search__wrap,
+		.search__btn
+			+opacity(0)
+		.search__btn-bue,
+		.search__sub
+			font-size: 15px
+			+opacity(1)
+			+transition(all .3s linear)
+	.search__btn
+		position: relative
+		margin-top: 2px
+		padding-left: 25px
+		height: 20px
+		font-size: 15px
+		font-weight: 600
+		background: none
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			+s(ico-search-white)
+	.search__btn-bue
+		position: absolute
+		top: 5px
+		left: 5px
+		+s(ico-search-blue)
+		+opacity(0)
+	.search__input
+		position: absolute
+		top: 0
+		right: -13px
+		width: 0
+		overflow: hidden
+		z-index: -1
+		+opacity(0)
+		+transition(all .2s linear)
+		input
+			padding: 0 75px 0 30px
+			width: 100%
+			height: 29px
+			color: #000
+			border: 2px solid #0f98f2
+			border-radius: 29px
+			+box
+	.search__sub
+		position: absolute
+		top: 2px
+		right: 2px
+		bottom: 2px
+		line-height: 25px
+		text-align: center
+		width: 71px
+		text-shadow: 0 0 30px rgba(13, 61, 108, 0.75)
+		color: #0f98f2
+		font-family: "Open Sans"
+		font-size: 0
+		font-weight: 600
+		background: none
+		+opacity(0)
 
+// menu
+.menu
+	margin-top: 40px
+	font-size: 0
+	.menu__item
+		position: relative
+		margin-left: 56px
+		vertical-align: top
+		display: inline-block
+		+first
+		&:hover
+			.menu__block
+				visibility: visible
+				+opacity(1)
+				z-index: 10
+	a
+		font-size: 22px
+		font-weight: 700
+		line-height: 25px
+		color: #fff
+		&:hover,
+		&.is-active
+			color: #0f98f2
+			text-decoration: none
+	.menu__block
+		position: absolute
+		top: 100%
+		left: 0
+		padding-top: 17px
+		visibility: hidden
+		+opacity(0)
+		z-index: -1
+		+transition(all .1s linear)
 
+// lang
+.lang
+	position: relative
+	top: -1px
+	.lang__item
+		margin-left: 4px
+		vertical-align: top
+		display: inline-block
+		+first
+	a
+		width: 30px
+		height: 30px
+		line-height: 30px
+		text-align: center
+		text-decoration: underline
+		font-size: 14px
+		border-radius: 50%
+		display: block
+		&:hover,
+		&.is-active
+			font-weight: 700
+			background: #90c73e
+			text-decoration: none
 
+// commodity
+.commodity
+	padding: 19px
+	width: 287px
+	+box-shadow(0 5px 5px rgba(0, 0, 0, 0.16))
+	background: #fff
+	+box
+	&.commodity_disabled
+		.commodity__title,
+		.commodity__text,
+		.commodity__option
+			color: #929292
+	.commodity__title
+		color: #0f98f2
+		font-size: 30px
+		font-weight: 600
+	.commodity__text
+		color: #000
+		font-weight: 600
+	.commodity__modif
+	.commodity__option
+		color: #0f98f2
+		font-size: 13px
+	.commodity__inf
+		height: 28px
+		background-color: #90c73e
 
+// contacts
+.contacts
+	.contacts__row
+		margin-top: 10px
+		+first
+	.contacts__col
+		margin-left: 8px
+		vertical-align: top
+		font-weight: 600
+		font-size: 13px
+		display: inline-block
+		+first
 
+// copy, creator
+.creator,
+.copy
+	font-weight: 300
+// soc
+.soc
+	font-size: 0
+	.soc__item
+		margin-left: 9px
+		vertical-align: top
+		display: inline-block
+		+first
 
+// address
+.address
+	padding-right: 27px
+	font-size: 11px
+	line-height: 1.2
+
+// footer
+.footer
+	margin-top: -94px
+	padding-top: 20px
+	height: 94px
+	color: #fff
+	background: url(../img/footer-bg.png) no-repeat 50% 50% 
+	background-size: cover
+	// +background-image(linear-gradient(left, #8ec63f 40%, #439dbc 100%))
+	+box
+	.contacts
+		max-width: 680px
+		.btn
+			top: -4px
+	.soc
+		margin-left: 20px
+		max-width: 178px
+	.address
+		margin-left: 20px
+		max-width: 280px
+		.dotted
+			margin-top: 5px
+	.contacts,
+	.soc,
+	.address
+		vertical-align: top
+		display: inline-block
 
 
 

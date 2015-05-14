@@ -1,19 +1,16 @@
 head.ready(function() {
 
-	// $(document).on("click", function(){
-	// 	$(".js-popup").hide();
-	// });
+	// click
+	$('body').on('click', function(){
+		$('.js-search').removeClass('is-active');
+	});
 
-	// function scrollFixedElements() {
-	//     var scroll_left = $(this).scrollLeft();
-	//     $(".fixed-element").css({
-	//         left: -scroll_left
-	//     });
-	// }
-	// scrollFixedElements();
-	// $(window).scroll(function(){
-	//     scrollFixedElements()
-	// });
+	$('.js-open-search').on('click', function(event) {
+		$(this).parents('.js-search').addClass('is-active');
+	  	event.stopPropagation();
+	});
+	$( ".js-search-input" ).click(function(event) {
+		event.stopPropagation();
+	});
 
-	console.log($('body').html());
 });
