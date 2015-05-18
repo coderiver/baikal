@@ -47,6 +47,14 @@
 // p
 // 	+jpg(bla)
 
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=cyrillic,cyrillic-ext,latin")
+@import url("http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic-ext")
+
+=rob
+	font-family: 'Roboto', sans-serif
+	font-weight: 400
+	+font-smoothing(antialiased)
+
 // first element
 =first
 	&:first-child
@@ -57,10 +65,9 @@
 	color: $bd-color
 	border-color: $bd-color
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=cyrillic,cyrillic-ext,latin")
-
 body
 	font-family: 'Open Sans', sans-serif
+	+font-smoothing(antialiased)
 	font-size: 15px
 	font-weight: 300
 	line-height: 1.4
@@ -79,6 +86,22 @@ body
 		+s(ico-in)
 	&.ico_vk
 		+s(ico-vk)
+	&.ico_part-1
+		+s(ico-part-1)
+	&.ico_part-2
+		+s(ico-part-2)
+	&.ico_part-3
+		+s(ico-part-3)
+	&.ico_part-4
+		+s(ico-part-4)
+	&.ico_part-5
+		+s(ico-part-5)
+	&.ico_part-6
+		+s(ico-part-6)
+	&.ico_part-7
+		+s(ico-part-7)
+	&.ico_part-8
+		+s(ico-part-8)
 
 // buttons
 .btn
@@ -87,15 +110,35 @@ body
 	height: 29px
 	line-height: 25px
 	color: #fff
-	letter-spacing: 0.8px
-	border: 2px solid #f6f8fa
+	letter-spacing: 0.1px
+	vertical-align: top
+	font-size: 15px
+	font-weight: 600
 	border-radius: 29px
+	border: 2px solid #f6f8fa
+	display: inline-block
 	background: none
 	+box
 	+transition(all .1s linear)
-	&:hover
-		color: #0f98f2
-		border-color: #0f98f2
+	&:hover,
+	&:focus,
+	&:active,
+	&:active:focus
+		outline: none
+		color: #fff
+	&.btn_black
+		color: #000
+		border-color: #000
+		&:hover,
+		&:focus,
+		&:active,
+		&:active:focus
+			color: #000
+	&.btn_big
+		height: 39px
+		min-width: 175px
+		line-height: 35px
+		border-radius: 39px
 button.btn
 	line-height: 1
 
@@ -112,9 +155,26 @@ button.btn
 	&.dotted_white
 		+dotted(#fff)
 
+// blue
+.blue
+	color: #0f98f2
+
+// title
+.title
+	margin-bottom: 20px
+	font-size: 50px
+	font-weight: 600
+	line-height: 1
+	text-transform: uppercase
+
+.title-small
+	margin-bottom: 8px
+	font-size: 28px
+	font-weight: 300
+	line-height: 30px
+
 // common blocks      
 
-// out
 .out
 	padding-bottom: 94px
 	min-height: 100%
@@ -127,11 +187,73 @@ button.btn
 	background: url(../img/header-bg.png) no-repeat 50% 50% 
 	background-size: cover
 	// +background-image(linear-gradient(left, #a5d165 40%, #69b0cc 100%))
+	a
+		+transition(none)
 	+box
+	&.header_home
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 145px
+		z-index: 10
+		background: url(../img/header-opacity-bg.png) no-repeat 50% 95%
+		background-size: cover
+	&.is-fixed
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		height: 66px
+		z-index: 99
+		+box-shadow(0 5px 5px rgba(0, 0, 0, 0.16))
+		+background-image(linear-gradient(left, #8ec63f 40%, #439dbc 100%))
+		background-attachment: fixed
+		.header__in
+			padding: 0 227px 0 139px
+		.search__btn
+			font-size: 0
+			&:before
+				position: absolute
+				top: -5px
+				left: -9px
+		.logo
+			top: 14px
+			+s(logo-small)
+		.lang
+			display: none
+		.btn,
+		.search
+			position: absolute
+			top: 25px
+			right: 0
+		.btn.btn_black
+			position: relative
+			top: auto
+		.search
+			right: 192px
+		.header__top
+			float: left
+			margin-top: 13px
+			width: 190px
+		.header__info
+			font-size: 14px
+			font-weight: 300
+			margin: 0
+		.menu
+			margin: 25px 25px 0 0
+			float: right
+			.menu__link
+				font-size: 17px
+				font-weight: 400
+				line-height: 25px
+			.menu__item
+				margin-left: 35px
+				+first
 	.header__in
 		position: relative
-		padding-top: 10px
-		padding-left: 344px
+		padding: 10px 0 0 344px
+		+clr
 	.header__top
 		+clr
 	.header__info
@@ -161,6 +283,7 @@ button.btn
 		.search__input
 			width: 658px
 			+opacity(1)
+			visibility: visible
 			z-index: 2
 		.search__wrap,
 		.search__btn
@@ -178,6 +301,7 @@ button.btn
 		font-size: 15px
 		font-weight: 600
 		background: none
+		+transition(all .3s linear)
 		&:before
 			position: absolute
 			content: ''
@@ -193,10 +317,11 @@ button.btn
 	.search__input
 		position: absolute
 		top: 0
-		right: -13px
+		right: 0
 		width: 0
 		overflow: hidden
 		z-index: -1
+		visibility: hidden
 		+opacity(0)
 		+transition(all .2s linear)
 		input
@@ -238,11 +363,15 @@ button.btn
 				visibility: visible
 				+opacity(1)
 				z-index: 10
-	a
+			.menu__link
+				color: #0f98f2
+				text-decoration: none
+	.menu__link
 		font-size: 22px
 		font-weight: 700
 		line-height: 25px
 		color: #fff
+		+transition(color .1s linear)
 		&:hover,
 		&.is-active
 			color: #0f98f2
@@ -256,6 +385,15 @@ button.btn
 		+opacity(0)
 		z-index: -1
 		+transition(all .1s linear)
+		.commodity
+			&:first-child
+				padding-bottom: 0
+		.btn
+			font-size: 15px
+			font-weight: 600
+			&.btn_black
+				&:hover
+					color: #000
 
 // lang
 .lang
@@ -271,7 +409,6 @@ button.btn
 		height: 30px
 		line-height: 30px
 		text-align: center
-		text-decoration: underline
 		font-size: 14px
 		border-radius: 50%
 		display: block
@@ -283,11 +420,19 @@ button.btn
 
 // commodity
 .commodity
+	position: relative
 	padding: 19px
 	width: 287px
+	font-size: 13px
 	+box-shadow(0 5px 5px rgba(0, 0, 0, 0.16))
 	background: #fff
 	+box
+	&:before
+		position: absolute
+		content: ''
+		top: -6px
+		left: 67px
+		+arr(16,8,#fff,t)
 	&.commodity_disabled
 		.commodity__title,
 		.commodity__text,
@@ -296,17 +441,339 @@ button.btn
 	.commodity__title
 		color: #0f98f2
 		font-size: 30px
+		line-height: 1
 		font-weight: 600
+		display: block
 	.commodity__text
+		margin: 4px 0
 		color: #000
 		font-weight: 600
-	.commodity__modif
 	.commodity__option
+		margin-right: 7px
 		color: #0f98f2
+		font-weight: 400
 		font-size: 13px
+		&:hover
+			text-decoration: underline
 	.commodity__inf
+		padding: 0 22px
 		height: 28px
+		color: #fff
+		font-size: 17px
+		font-weight: 400
+		line-height: 28px
 		background-color: #90c73e
+		vertical-align: top
+		display: inline-block
+	.commodity__row
+		margin-top: 10px
+	.btn
+		float: none
+
+// slider
+.slider
+	color: #fff
+	.slider__slide
+		height: 629px
+		width: 100%
+		+box
+		&.slider__slide_1
+			background: url(../img/slide-1.png) no-repeat 50% 50%
+			background-size: cover
+		&.slider__slide_2
+			background: url(http://lorempixel.com/1280/629/people) no-repeat 50% 50%
+			background-size: cover
+		&.slider__slide_3
+			background: url(http://lorempixel.com/1280/629/food) no-repeat 50% 50%
+			background-size: cover
+		&.slider__slide_4
+			background: url(http://lorempixel.com/1280/629/sports) no-repeat 50% 50%
+			background-size: cover
+		&.slider__slide_5
+			background: url(http://lorempixel.com/1280/629/nature) no-repeat 50% 50%
+			background-size: cover
+		&.slider__slide_6
+			background: url(http://lorempixel.com/1280/629/people) no-repeat 50% 50%
+			background-size: cover
+		&.slider__slide_7
+			background: url(http://lorempixel.com/1280/629/sports) no-repeat 50% 50%
+			background-size: cover
+	.slider__wrap
+		position: relative
+		margin: 0 auto
+		max-width: 1280px
+		height: 100%
+	.slider__in
+		position: absolute
+		width: 620px
+		bottom: 0
+		right: 0
+		padding-bottom: 90px
+		font-size: 33px
+	.slider__title
+		font-size: 50px
+		font-weight: 700
+		text-transform: uppercase
+	.slider__text
+		width: 480px
+	.slider__nav
+		position: absolute
+		left: 0
+		bottom: 13px
+		right: 0
+		z-index: 2
+		text-align: center
+		font-size: 20px
+		+rob
+		.slick-dots,
+		.slider__nav-text
+			position: relative
+			vertical-align: top
+			display: inline-block !important
+	.slider__nav-text
+		margin-right: 5px
+	.slick-dots
+		button
+			height: 30px
+			width: 30px
+			font-size: 20px
+			background: none
+			+rob
+			+transition(all .1s linear)
+			+box
+		li
+			margin-right: 2px
+			&:hover,
+			&.slick-active
+				button
+					background: #90c73e
+
+// video
+.video
+	position: relative
+	height: 582px
+
+// picture
+.picture
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	color: #fff
+	font-size: 19px
+	cursor: pointer
+	background: url('../img/video-pic.png') no-repeat 50% 50%
+	background-size: cover
+	&:hover
+		&:before
+			+opacity(.9)
+	&:before
+		position: absolute
+		content: ''
+		left: 50%
+		bottom: 60px
+		+translate(-50%,0)
+		+transition(all .1s linear)
+		+s(ico-play)
+	.picture__in
+		margin: 30px auto 0
+		text-align: center
+		max-width: 1045px
+
+// devel
+.devel
+	padding: 40px 0 30px
+	text-align: center
+	font-size: 20px
+	font-weight: 300
+	line-height: 28px
+// tab
+.tab
+	position: relative
+	margin-top: 25px
+	.tab__list
+		position: absolute
+		left: 400px
+		top: 21px
+		font-size: 0
+	.tab__item
+		margin-left: 12px
+		display: inline-block
+		vertical-align: top
+		+first
+		+box
+		&:hover,
+		&.is-active
+			.tab__link
+				+translate(0,-10px)
+				.tab__shad
+					opacity: 1
+					width: 90%
+			.tab__link_4
+				+s(ico-tab-4-ac)
+	.tab__link
+		position: relative
+		display: block
+		+transition(all .12s linear)
+		+box
+		.tab__shad
+			position: absolute
+			content: ''
+			bottom: -13px
+			left: 50%
+			height: 10px
+			width: 0
+			pointer-events: none
+			z-index: -1
+			opacity: 0
+			+translate(-50%,0)
+			+background(radial-gradient(ellipse at center, rgba(#0f98f2, 0.35) 0%, rgba(#0f98f2, 0) 80%))
+			+transition(all .12s linear)
+		&.tab__link_1
+			+s(ico-tab-1)
+		&.tab__link_2
+			+s(ico-tab-2)
+		&.tab__link_3
+			+s(ico-tab-3)
+		&.tab__link_4
+			+s(ico-tab-4-ac)
+		&.tab__link_5
+			+s(ico-tab-5)
+		&.tab__link_6
+			+s(ico-tab-6)
+		&.tab__link_7
+			+s(ico-tab-7)
+		&.tab__link_8
+			+s(ico-tab-8)
+		&.tab__link_9
+			+s(ico-tab-9)
+		&.tab__link_10
+			+s(ico-tab-10)
+	.tab__cont
+		padding-top: 130px
+		text-align: left
+		font-size: 17px
+		font-weight: 300
+		line-height: 24px
+		display: none
+		+clr
+	.tab__img
+		float: left
+		width: 400px
+		margin-top: -140px
+	.tab__text
+		overflow: hidden
+	.tab__title
+		margin-bottom: 22px
+		font-size: 38px
+		font-weight: 300
+		line-height: 1
+	.tab__row
+		font-size: 0
+		+clr
+	.tab__col
+		width: 50%
+		font-size: 17px
+		vertical-align: top
+		display: inline-block
+		+box
+		&:first-child
+			padding-right: 70px
+	.tags
+		float: left
+		margin-top: 20px
+	.btn.btn_black
+		margin-top: 20px
+		float: right
+
+// info
+.info
+	margin: 35px 0
+	+clr
+
+// news
+.news
+	padding: 19px 0 30px
+	color: #fff
+	background: url(../img/news-bg.png) no-repeat 50% 50%
+	background-size: cover
+	.row
+		&:first-child
+			margin-bottom: 33px
+			.btn
+				margin-left: 15px
+	img
+		margin-top: 6px
+	.date
+		margin-top: 20px
+		+first
+
+// partners
+.partners
+	padding: 35px 0
+	text-align: center
+	.title-small
+		margin-bottom: 25px
+	.partners__list
+		width: 100%
+		display: table
+	.partners__item
+		height: 60px
+		min-width: 90px
+		line-height: 60px
+		display: table-cell
+	.ico
+		position: relative
+		vertical-align: middle
+		&:hover
+			+opacity(.8)
+		&.ico_part-7
+			bottom: -8px
+
+// date
+.date
+	font-weight: 600
+	display: block
+
+// list
+.list
+	margin-top: 2px
+	li
+		margin-top: 5px
+		position: relative
+		padding-left: 9px
+		line-height: 1.4
+		+first
+		&:before
+			position: absolute
+			content: ''
+			left: 0
+			top: 10px
+			height: 4px
+			width: 4px
+			background: #000
+			+border-radius(50%)
+// tags
+.tags
+	.tags__text
+		margin-right: 5px
+		color: #000
+		font-size: 20px
+		font-weight: 600
+		line-height: 24px
+		vertical-align: top
+		display: inline-block
+
+// tag
+.tag
+	margin-right: 10px
+	color: #0f98f2
+	font-size: 15px
+	font-weight: 400
+	line-height: 26px
+	vertical-align: top
+	display: inline-block
 
 // contacts
 .contacts
@@ -325,6 +792,7 @@ button.btn
 .creator,
 .copy
 	font-weight: 300
+
 // soc
 .soc
 	font-size: 0
@@ -346,9 +814,7 @@ button.btn
 	padding-top: 20px
 	height: 94px
 	color: #fff
-	background: url(../img/footer-bg.png) no-repeat 50% 50% 
-	background-size: cover
-	// +background-image(linear-gradient(left, #8ec63f 40%, #439dbc 100%))
+	+background-image(linear-gradient(left, #8ec63f 30%, #439dbc 100%))
 	+box
 	.contacts
 		max-width: 680px
