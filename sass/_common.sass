@@ -114,6 +114,26 @@ body
 		+s(ico-action-3)
 	&.ico_action-4
 		+s(ico-action-4)
+	&.ico_app-1
+		+s(ico-app-1)
+	&.ico_app-2
+		+s(ico-app-2)
+	&.ico_app-3
+		+s(ico-app-3)
+	&.ico_app-4
+		+s(ico-app-4)
+	&.ico_app-5
+		+s(ico-app-5)
+	&.ico_app-6
+		+s(ico-app-6)
+	&.ico_app-7
+		+s(ico-app-7)
+	&.ico_app-8
+		+s(ico-app-8)
+	&.ico_app-9
+		+s(ico-app-9)
+	&.ico_app-10
+		+s(ico-app-10)
 
 // buttons
 .btn
@@ -148,6 +168,20 @@ body
 		color: #000
 		border-color: #000
 		+background-image(linear-gradient(45deg, rgba(#0f98f2,.0) 30%, rgba(#0f98f2,.8), rgba(#0f98f2,.0) 70%))
+	&.btn_green
+		height: 39px
+		border-color: #77c632
+		background-color: #77c632
+		line-height: 35px
+		border-radius: 39px
+		+background-image(none)
+		&:hover,
+		&:focus,
+		&:active,
+		&:active:focus
+			color: #fff
+			border-color: #0f98f2
+			background: #0f98f2
 	&.btn_h-blue
 		&:hover,
 		&:focus,
@@ -211,6 +245,7 @@ button.btn
 // common blocks      
 
 .out
+	position: relative
 	padding-bottom: 94px
 	min-height: 100%
 	+box
@@ -434,6 +469,15 @@ button.btn
 	margin: 40px 0 30px
 	font-size: 0
 	text-align: center
+	&.nav-menu_mod
+		a
+			text-decoration: none
+			&:hover
+				color: #0164a5
+				text-decoration: underline
+			&.is-active
+				color: #0164a5
+				font-weight: 700
 	li
 		margin-left: 40px
 		vertical-align: top
@@ -455,13 +499,20 @@ button.btn
 	font-weight: 300
 	h1
 		margin: 30px 0
-		text-align: center
-		font-size: 66px
-		font-weight: 600
 	p
 		margin-bottom: 30px
 		&:last-child
 			margin-bottom: 0
+
+h1
+	text-align: center
+	font-size: 66px
+	font-weight: 600
+
+.img
+	display: block
+	&.img_bord
+		border: 3px solid #77c632
 
 // lang
 .lang
@@ -1015,6 +1066,40 @@ button.btn
 		margin-bottom: 5px
 		color: #000
 
+// processor
+.processor
+	.processor__row
+		margin-top: 50px
+		.title-middle
+			text-align: left
+		.img_bord
+			margin-bottom: 42px
+	.title-middle
+		margin: 40px 0 25px
+	.processor__text
+		font-size: 24px
+		text-align: center
+		line-height: 32px
+
+// application
+.application
+	+clr
+	.title-middle
+		margin-bottom: 40px
+	.application__item
+		float: left
+		padding: 0 35px
+		min-height: 155px
+		width: 20%
+		text-align: center
+		+box
+	.ico
+		margin-bottom: 5px
+
+// field
+.field
+	margin-top: 35px
+
 // date
 .date
 	font-weight: 600
@@ -1023,6 +1108,11 @@ button.btn
 // list
 .list
 	margin-top: 2px
+	&.list_green
+		li
+			&:before
+				top: 8px
+				background: #7ac814
 	li
 		margin-top: 5px
 		position: relative
