@@ -102,6 +102,18 @@ body
 		+s(ico-part-7)
 	&.ico_part-8
 		+s(ico-part-8)
+	&.ico_inv-1
+		+s(ico-inv-1)
+	&.ico_inv-2
+		+s(ico-inv-2)
+	&.ico_action-1
+		+s(ico-action-1)
+	&.ico_action-2
+		+s(ico-action-2)
+	&.ico_action-3
+		+s(ico-action-3)
+	&.ico_action-4
+		+s(ico-action-4)
 
 // buttons
 .btn
@@ -116,24 +128,33 @@ body
 	font-weight: 600
 	border-radius: 29px
 	border: 2px solid #f6f8fa
+	+background-image(linear-gradient(45deg, rgba(#fff,.0) 30%, rgba(#fff,.8), rgba(#fff,.0) 70%))
+	background-repeat: no-repeat
+	background-size: 200% 100%
+	background-position: 200% 0
 	display: inline-block
-	background: none
+	background-color: initial
+	+transition(all .2s linear)
 	+box
-	+transition(all .1s linear)
 	&:hover,
 	&:focus,
 	&:active,
 	&:active:focus
 		outline: none
-		color: #fff
+		color: #000
+		background-position: -200% 0
+		border-color: #000
 	&.btn_black
 		color: #000
 		border-color: #000
+		+background-image(linear-gradient(45deg, rgba(#0f98f2,.0) 30%, rgba(#0f98f2,.8), rgba(#0f98f2,.0) 70%))
+	&.btn_h-blue
 		&:hover,
 		&:focus,
 		&:active,
 		&:active:focus
-			color: #000
+			color: #0f98f2
+			border-color: #0f98f2
 	&.btn_big
 		height: 39px
 		min-width: 175px
@@ -173,6 +194,20 @@ button.btn
 	font-weight: 300
 	line-height: 30px
 
+.title-middle
+	text-align: center
+	margin-bottom: 18px
+	font-size: 38px
+	font-weight: 300
+	line-height: 25px
+
+.title-green
+	color: #75b725
+	font-size: 22px
+	text-align: center
+	font-weight: 700
+	line-height: 25px
+
 // common blocks      
 
 .out
@@ -189,6 +224,8 @@ button.btn
 	// +background-image(linear-gradient(left, #a5d165 40%, #69b0cc 100%))
 	a
 		+transition(none)
+		&.btn
+			+transition(all .2s linear)
 	+box
 	&.header_home
 		position: absolute
@@ -391,9 +428,40 @@ button.btn
 		.btn
 			font-size: 15px
 			font-weight: 600
-			&.btn_black
-				&:hover
-					color: #000
+
+// nac-menu
+.nav-menu
+	margin: 40px 0 30px
+	font-size: 0
+	text-align: center
+	li
+		margin-left: 40px
+		vertical-align: top
+		display: inline-block
+		+first
+	a
+		color: #0f98f2
+		font-size: 20px
+		font-weight: 300
+		line-height: 28px
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+
+// content
+.content
+	padding-bottom: 50px
+	font-size: 15px
+	font-weight: 300
+	h1
+		margin: 30px 0
+		text-align: center
+		font-size: 66px
+		font-weight: 600
+	p
+		margin-bottom: 30px
+		&:last-child
+			margin-bottom: 0
 
 // lang
 .lang
@@ -580,6 +648,10 @@ button.btn
 		margin: 30px auto 0
 		text-align: center
 		max-width: 1045px
+	.picture__title
+		margin-top: 65px
+		font-size: 40px
+		font-weight: 300
 
 // devel
 .devel
@@ -588,10 +660,99 @@ button.btn
 	font-size: 20px
 	font-weight: 300
 	line-height: 28px
+
 // tab
 .tab
 	position: relative
 	margin-top: 25px
+	&.tab_mod
+		.tab__cont
+			padding-top: 0
+		.tab__in
+			margin: 0 auto
+			padding: 35px 0 60px
+			max-width: 796px
+	.tab__topic
+		padding-top: 24px
+		height: 157px
+		+user-select(none)
+		background: url(../img/tab-nav-bg.png) repeat-x 0 0
+	.tab__top
+		margin: 0 auto
+		max-width: 888px
+	.tab__point
+		display: block
+		height: 10px
+		&:first-child
+			margin-bottom: 17px
+			text-align: center
+			&.is-active
+				.tab__link
+					&:before
+						width: 41px
+						height: 110px
+		&:nth-child(3)
+			margin-top: -18px
+			margin-bottom: 25px
+			text-align: right
+		&:nth-child(4)
+			padding-right: 220px
+			text-align: right
+			&.is-active
+				.tab__link
+					&:before
+						width: 30px
+						height: 68px
+		&:last-child
+			padding-left: 220px
+			&.is-active
+				.tab__link
+					&:before
+						height: 60px
+						width: 28px
+		&:nth-child(3),
+		&:nth-child(5)
+			&.is-active
+				.tab__link
+					&:before
+						+rotate(180)
+		&.is-active
+			.tab__link
+				color: #0e7ac0
+				font-weight: 700
+				border: none
+				&:before
+					visibility: visible
+					+opacity(1)
+					z-index: 1
+					height: 95px
+		.tab__link
+			color: #0f98f2
+			font-weight: 400
+			font-size: 28px
+			line-height: 32px
+			border-bottom: 1px dotted #0f98f2
+			display: inline-block
+			+transition(all .15s linear)
+			&:hover,
+			&:active,
+			&:focus
+				text-decoration: none
+				border: none
+			&:before
+				position: absolute
+				content: ''
+				left: 50%
+				top: 100%
+				+translate(-50%, 4px)
+				background: url(../img/tab-link-active.png) no-repeat 0 0
+				visibility: hidden
+				+opacity(0)
+				z-index: -1
+				width: 36px
+				height: 0
+				background-size: 100% 100%
+				+transition(height .15s linear)
 	.tab__list
 		position: absolute
 		left: 400px
@@ -713,7 +874,8 @@ button.btn
 .partners
 	padding: 35px 0
 	text-align: center
-	.title-small
+	.title-small,
+	.title-middle
 		margin-bottom: 25px
 	.partners__list
 		width: 100%
@@ -727,9 +889,131 @@ button.btn
 		position: relative
 		vertical-align: middle
 		&:hover
-			+opacity(.8)
+			+transform(scale(1.1))
 		&.ico_part-7
 			bottom: -8px
+// way
+.way
+	padding: 50px 0 20px
+	text-align: center
+
+// leadership
+.leadership
+	padding: 40px 0 60px
+	color: #fff
+	background: url(../img/leadership-bg.png) no-repeat 50% 0
+	background-size: cover
+	.leadership__in
+		margin: 0 auto
+		width: 980px
+	.leadership__row
+		margin-top: 28px
+		font-size: 0
+	.title-green
+		margin-bottom: 25px
+	.title-middle
+		margin-bottom: 40px
+
+// worker
+.worker
+	margin-left: 2.2%
+	width: 18.2%
+	font-size: 13px
+	font-weight: 300
+	vertical-align: top
+	display: inline-block
+	+first
+	.worker__img
+		margin-bottom: 18px
+		img
+			display: block
+			width: 100%
+	.worker__name
+		margin-bottom: 5px
+		font-size: 15px
+		font-weight: 700
+
+// dis-center
+.dis-center
+	text-align: center
+	padding: 65px 0 76px
+
+// gall
+.gall
+	margin-top: 25px
+	padding-bottom: 27px
+	overflow: hidden
+	height: 234px
+	.gall__slide
+		float: left
+	.slick-dots
+		button
+			font-size: 0
+			width: 12px
+			height: 12px
+			background-color: #0f98f2
+		li
+			margin-left: 8px
+			+first
+			&.slick-active
+				button
+					background-color: #90c73e
+
+// offer
+.offer
+	padding: 58px 0 69px
+	font-size: 20px
+	color: #fff
+	border: 5px solid #75b725
+	background: url(../img/offer-bg.png) no-repeat 50% 50%
+	background-size: cover
+	.offer__in
+		margin: 0 auto
+		max-width: 980px
+	.offer__title
+		font-size: 33px
+		font-weight: 300
+	.btn
+		margin-top: 26px
+
+// investors
+.investors
+	padding: 53px 0 18px
+	line-height: 1.8
+	.title-middle
+		margin-bottom: 64px
+	img,
+	.ico
+		position: relative
+		margin-bottom: 35px
+		display: block
+		&.ico_inv-1
+			margin-top: -9px
+	p
+		padding-right: 75px
+
+// actions
+.actions
+	padding: 83px 0
+	.title-middle
+		margin-bottom: 35px
+		.btn
+			position: relative
+			margin-left: 5px
+			bottom: -2px
+
+// action
+.action
+	color: #000
+	img,
+	.ico
+		float: left
+		margin: 4px 28px 0 0
+	.action__right
+		overflow: hidden
+	.date
+		margin-bottom: 5px
+		color: #000
 
 // date
 .date

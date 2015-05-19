@@ -46,6 +46,16 @@ head.ready(function() {
 	}
 	sliderNav();
 
+	$('.js-gall').slick({
+		slidesToShow: 4,
+		slidesToScroll: 4,
+		arrows: false,
+		dots: true,
+		speed: 600,
+		autoplay: true,
+		autoplaySpeed: 3000
+	});
+
 	// tab
 	function tab() {
 		$(".js-tab").each(function(){
