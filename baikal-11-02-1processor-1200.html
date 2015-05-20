@@ -217,16 +217,171 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
-								
+							<div class="col-md-8">
+								<div class="text-smbold">Cкачивание документв доступно только после заполнения формы. Все поля обязательны для заполнения</div>
 							</div>
-							<div class="col-md-6">
-								
-							</div>
+						</div>
+						<div class="row">
+							<form class="form js-form-down">
+								<div class="error-text">
+									<div class="col-md-12">Внимание! Не заполнены обязательные поля формы</div>
+								</div>
+								<div class="col-md-6">
+									<div class="field">
+										<label for="name1" class="label">Имя</label>
+										<input class="input" type="text" name="name" id="name1">
+									</div>
+									<div class="field">
+										<label for="phone1" class="label">Телефон</label>
+										<input class="input" type="phone" name="phone" id="phone1">
+									</div>
+									<div class="field">
+										<button class="btn btn_green btn_min" type="submit">Отправить</button>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="field">
+										<label for="email1" class="label">Email</label>
+										<input class="input" type="email" name="email" id="email1">
+									</div>
+									<div class="field">
+										<div class="label">Вид деятельности</div>
+										<label class="radiobutton">
+											<input type="radio" name="activities">
+											<span>разработчик</span>
+										</label>
+										<label class="radiobutton">
+											<input type="radio" name="activities">
+											<span>журналист</span>
+										</label>
+										<label class="radiobutton">
+											<input type="radio" name="activities">
+											<span>студент</span>
+										</label>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="row">
+							<form class="form is-disabled js-form">
+								<div class="col-md-6">
+									<div class="field">
+										<label class="checkbox">
+											<input type="checkbox">
+											<div class="checkbox__text">
+												<span class="blue">ISO 9001 - 2001 название документа</span>
+												<p>(PDF - 670КБ)</p>
+											</div>
+										</label>
+									</div>
+									<div class="field">
+										<label class="checkbox">
+											<input type="checkbox">
+											<div class="checkbox__text">
+												<span class="blue">ISO 9001 - 2001 название документа название документа название документа название документа название документа название документа</span>
+												<p>(PDF - 670КБ)</p>
+											</div>
+										</label>
+									</div>
+									<div class="field">
+										<label class="checkbox">
+											<input type="checkbox" class="js-check-all">
+											<div class="checkbox__text">
+												Выбрать все файлы
+											</div>
+										</label>
+									</div>
+									<div class="field">
+										<button class="btn btn_green">Скачать 5 файлов (3МБ)</button>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="field">
+										<label class="checkbox">
+											<input type="checkbox">
+											<div class="checkbox__text">
+												<span class="blue">ISO 9001 - 2001 название документа</span>
+												<p>(PDF - 670КБ)</p>
+											</div>
+										</label>
+									</div>
+									<div class="field">
+										<label class="checkbox">
+											<input type="checkbox">
+											<div class="checkbox__text">
+												<span class="blue">ISO 9001 - 2001 название документа название документа название документа название документа название документа название документа</span>
+												<p>(PDF - 670КБ)</p>
+											</div>
+										</label>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<form class="form js-form">
+					<h3 class="title-middle">Отправить заявку</h3>
+					<div class="form__text">Оставьте свой запрос службе продаж и наши специалисты свяжутся с вами.</div>
+					<div class="error-text">
+						<div class="col-md-12">Внимание! Не заполнены обязательные поля формы</div>
+					</div>
+					<div class="field">
+						<div class="row">
+							<div class="col-md-4">
+								<label for="name" class="label">Имя *</label>
+								<input type="text" name="name" id="name" class="input">
+							</div>
+							<div class="col-md-4">
+								<label for="phone" class="label">Телефон *</label>
+								<input type="phone" name="phone" id="phone" class="input">
+							</div>
+							<div class="col-md-4">
+								<label for="email" class="label">Email *</label>
+								<input type="email" name="email" id="email" class="input">
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<div class="row">
+							<div class="col-md-4">
+								<label for="company" class="label">Компания</label>
+								<input type="text" name="company" id="company" class="input">
+							</div>
+							<div class="col-md-4">
+								<label for="city" class="label">Город</label>
+								<input type="text" name="city" id="city" class="input">
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<div class="row">
+							<div class="col-md-4">
+								<label for="circulation" class="label">Тираж</label>
+								<input type="text" name="circulation" id="circulation" class="input">
+							</div>
+							<div class="col-md-8">
+								<div class="form__inf">По возможности заполните это поле. То, что в укажете в нем, может повлиять на стоимость и условия поставки.</div>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label for="textarea" class="label">Тираж</label>
+						<textarea class="textarea" id="textarea"></textarea>
+					</div>
+					<div class="field">
+						<button class="btn btn_green" type="submit">Отправить</button>
+						<span class="form__imp">* Поля, обязательные для заполнения</span>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- prev -->
+		<div class="prev">
+			<a class="blue" href="#"><span>&#8249;</span> Вернуться к списку процессоров</a>
 		</div>
 	</div>
 </div>
