@@ -134,6 +134,16 @@ body
 		+s(ico-app-9)
 	&.ico_app-10
 		+s(ico-app-10)
+	&.ico_it-1
+		+s(ico-it-1)
+	&.ico_brand-guide
+		+s(brand-guide)
+	&.ico_present
+		+s(ico-present)
+	&.ico_green-logo
+		+s(ico-green-logo)
+	&.ico_prod
+		+s(ico-prod)
 
 // buttons
 .btn
@@ -501,16 +511,104 @@ button.btn
 	font-weight: 300
 	h1
 		margin: 30px 0
+	h3
+		margin: 20px 0
+		font-size: 38px
+		font-weight: 300
+		line-height: 35px
 	p
-		margin-bottom: 30px
-		&:last-child
-			margin-bottom: 0
+		margin-top: 30px
+	a
+		color: #0f98f2
+	.item
+		margin-top: 26px
 
+// h1
 h1
 	text-align: center
 	font-size: 66px
 	font-weight: 600
 
+// pagination
+.pag
+	margin: 25px 0
+	font-size: 0
+	li
+		vertical-align: top
+		display: inline-block
+	a
+		width: 36px
+		height: 36px
+		line-height: 36px
+		text-align: center
+		color: #000
+		font-size: 13px
+		font-weight: 400
+		+border-radius(50%)
+		display: block
+		&:hover
+			color: #00aeff
+			text-decoration: underline
+	.is-active
+		color: #fff
+		background-color: #77c632
+		&:hover
+			color: #fff
+			text-decoration: none
+	.pag__next,
+	.pag__prev
+		margin-left: 20px
+		width: 12px
+		font-size: 42px
+		font-weight: 400
+		line-height: 22px
+		&:hover
+			text-decoration: none
+	.pag__prev
+		margin: 0 20px 0 0
+
+.cont
+	margin-top: 45px
+	.cont__img
+		margin-bottom: 25px
+		img
+			display: block
+	.cont__name
+		font-size: 30px
+		font-weight: 600
+	.cont__mail
+		color: #0f98f2
+		font-size: 20px
+		font-weight: 300
+
+// item
+.item
+	line-height: 1.8
+	+clr
+	&.item_mod
+		margin-top: 0
+	.item__in
+		margin-top: 5px
+		padding-right: 5px
+		display: block
+		+clr
+		img,
+		.ico
+			margin-right: 15px
+	img,
+	.ico
+		float: left
+		margin: 4px 28px 0 0
+	.item__text
+		overflow: hidden
+	.item__title
+		font-size: 18px
+		font-weight: 600
+		line-height: 1.2
+	.date
+		font-weight: 700
+
+// img
 .img
 	display: block
 	&.img_bord
@@ -1103,7 +1201,10 @@ h1
 	&.is-disabled
 		.btn
 			display: none
+	.form__row
+		margin-top: 15px
 	.form__text
+		font-size: 20px
 		text-align: center
 	.form__inf
 		margin-top: 22px
@@ -1140,6 +1241,10 @@ input.error + label.error
 	border: 2px solid #000
 	+border-radius(39px)
 	+box
+	+placeholder-color(#adadad)
+	&:focus
+		+placeholder
+			font-size: 0
 .textarea
 	padding: 10px 15px
 	height: 139px
@@ -1278,6 +1383,20 @@ input.error + label.error
 .text-smbold
 	font-weight: 600
 
+// 
+.day-inf
+	position: absolute
+	left: 10px
+	right: 10px
+	padding: 10px
+	z-index: 50
+	border: 2px solid #90c73e
+	background: #fff
+	display: none
+	+box
+	&.is-chow
+		display: block
+
 // list
 .list
 	margin-top: 2px
@@ -1382,7 +1501,16 @@ input.error + label.error
 		display: inline-block
 
 
-
+// overlay
+.overlay
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 100
+	background: rgba(#000, .7)
+	display: none
 
 
 

@@ -3,6 +3,11 @@ head.ready(function() {
 	// click
 	$('body').on('click', function(){
 		$('.js-search').removeClass('is-active');
+		$('.js-overlay, .js-date-inf, .js-date-arr').fadeOut();
+	});
+
+	$("body").on("click", ".js-date-inf", function(event){
+		event.stopPropagation();
 	});
 
 	// show search
@@ -18,6 +23,7 @@ head.ready(function() {
 	$(window).scroll(function() {
 		var scroll = $(window).scrollTop();
 			header = $('.header');
+			height = header.height();
 
 		if (scroll < 1) {
 			header.removeClass('is-fixed');
@@ -136,9 +142,9 @@ head.ready(function() {
 				setTimeout(function(){
 					$('.js-form-down').hide();
 					errorText.removeClass('is-submit');
+					form.submit();
 				}, 1500);
 				formDisabled();
-				return false;
 			 },
 			invalidHandler: function(event, validator) {
 				var errors = validator.numberOfInvalids();
@@ -203,4 +209,46 @@ head.ready(function() {
 		});
 	});
 
+	// datepicker
+	var eventDates = {};
+		eventDates[ new Date('05-27-2015')] = new Date('05-27-2015');
+		eventDates[ new Date('05-28-2015')] = new Date('05-28-2015');
+	$(".datepicker").datepicker({
+		showOtherMonths: true,
+		selectOtherMonths: true,
+		dayNamesMin: ['S','M','T','W','T','F','S'],
+		inline: true,
+		firstDay: 1,
+		minDate: 0,
+		dateFormat: "dd-mm-yy",
+		beforeShowDay: function(date){
+			var highlight = eventDates[date];
+			dateFormat: "dd-mm-yy"
+			if (highlight) {
+				return [true, "event js-event", "highlight"];
+			} else {
+				return [true, '', ''];
+			}
+		},
+		onSelect: function(date) {
+			var thisEl = $(this);
+			var thisWidth = $(this).width();
+			setTimeout(function () {
+				var el = thisEl.find('.ui-state-active');
+				if (el.parent().hasClass('js-event')) {
+					var posTop = el.position().top,
+						posLeft = el.position().left,
+						block = $('#' + date),
+						arr = $('.js-date-arr'),
+						elHeight = block.height();
+					arr.hide();
+					arr.fadeIn();
+					arr.css({'top':posTop - 5, 'left':posLeft});
+					block.css({'top':posTop, 'margin-top': - elHeight - 29});
+					$('.js-date-inf').hide();
+					$('#' + date).fadeIn();
+				}
+			}, 1);
+		}
+	});
 });

@@ -1,0 +1,106 @@
+// Datepicker styles
+.datepicker
+	position: relative
+	padding: 15px
+	border: 3px solid #90c73e
+	th,
+	td
+		text-align: center
+		font-size: 14px
+		font-weight: 400
+	th
+		padding-bottom: 18px
+		color: #1e80d7
+	td
+		height: 42px
+		a
+			margin: 4px
+			height: 34px
+			width: 34px
+			line-height: 30px
+			border: 2px solid transparent
+			+border-radius(50%)
+			display: inline-block
+			+box
+			&:hover
+				border-color: #0f98f2
+	a
+		color: #61676b
+		&:hover
+			text-decoration: none
+	td.event
+		a
+			border-color: #0f98f2
+	.datepicker__arr
+		position: absolute
+		display: none
+		z-index: 50
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 15px
+			+arr(9,8,#90c73e,b)
+	.day-inf
+		.date
+			margin-bottom: 5px
+		a
+			color: #0f98f2
+			&:hover
+				text-decoration: underline
+	.ui-datepicker-header
+		position: relative
+		margin-bottom: 30px
+		padding: 0 35px
+		height: 35px
+		+box
+	.ui-datepicker-next,
+	.ui-datepicker-prev
+		position: absolute
+		top: 0
+		height: 35px
+		width: 35px
+		line-height: 38px
+		text-align: center
+		cursor: pointer
+		.ui-icon
+			font-size: 0
+			vertical-align: middle
+			display: inline-block
+	.ui-datepicker-next
+		right: 0
+		.ui-icon
+			+s(right-arrow)
+	.ui-datepicker-prev
+		left: 0
+		.ui-icon
+			+s(left-arrow)
+	.ui-datepicker-title
+		height: 35px
+		line-height: 35px
+		text-align: center
+		span
+			color: #1e80d7
+			font-size: 19px
+			font-weight: 400
+	.ui-datepicker-other-month
+		a,
+		.ui-state-default
+			color: #a7acaf
+			cursor: text
+			&:hover
+				border-color: transparent
+	.ui-datepicker-unselectable.ui-state-disabled,
+	.ui-datepicker-unselectable
+		color: #a7acaf
+	.ui-datepicker-today
+		a,
+		.ui-state-default
+			color: #fff
+			font-weight: 700
+			background-color: #77c632
+			&:hover
+				border-color: transparent
+	.ui-datepicker-unselectable
+		a
+			border-color: #0f98f2
