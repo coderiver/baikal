@@ -158,7 +158,6 @@ body
 	font-weight: 600
 	border-radius: 29px
 	border: 2px solid #f6f8fa
-	+background-image(linear-gradient(45deg, rgba(#fff,.0) 30%, rgba(#fff,.8), rgba(#fff,.0) 70%))
 	background-repeat: no-repeat
 	background-size: 200% 100%
 	background-position: 200% 0
@@ -177,13 +176,19 @@ body
 	&.btn_black
 		color: #000
 		border-color: #000
-		+background-image(linear-gradient(45deg, rgba(#0f98f2,.0) 30%, rgba(#0f98f2,.8), rgba(#0f98f2,.0) 70%))
+		&:hover,
+		&:focus,
+		&:active,
+		&:active:focus
+			color: #0f98f2
+			border-color: #0f98f2
 	&.btn_green
 		height: 39px
-		border-color: #77c632
-		background-color: #77c632
+		color: #fff
 		line-height: 35px
 		border-radius: 39px
+		border-color: #77c632
+		background-color: #77c632
 		+background-image(none)
 		&:hover,
 		&:focus,
@@ -509,6 +514,7 @@ button.btn
 	padding-bottom: 50px
 	font-size: 15px
 	font-weight: 300
+	line-height: 1.8
 	h1
 		margin: 30px 0
 	h3
@@ -522,6 +528,8 @@ button.btn
 		color: #0f98f2
 	.item
 		margin-top: 26px
+	.video_small
+		margin-top: 35px
 
 // h1
 h1
@@ -771,6 +779,13 @@ h1
 .video
 	position: relative
 	height: 582px
+	&.video_small
+		height: 327px
+		.picture
+			&:before
+				bottom: 50%
+				+translate(-50%,50%)
+				+s(ico-play-small)
 
 // picture
 .picture
@@ -1196,6 +1211,20 @@ h1
 	.ico
 		margin-bottom: 5px
 
+// advantages
+.advantages
+	margin-top: 35px
+	padding: 50px 0
+	color: #fff
+	background: url(../img/advantages-bg.png) no-repeat 50% 50%
+	background-size: cover
+	.row
+		margin-top: 34px
+		+first
+	.title-small
+		font-weight: 600
+		line-height: 26px
+
 // form
 .form
 	&.is-disabled
@@ -1400,6 +1429,13 @@ input.error + label.error
 // list
 .list
 	margin-top: 2px
+	&.blue
+		li
+			color: #0f98f2
+			&:before
+				background: #0f98f2
+			a
+				color: #0f98f2
 	&.list_green
 		li
 			&:before
@@ -1416,8 +1452,8 @@ input.error + label.error
 			content: ''
 			left: 0
 			top: 10px
-			height: 4px
-			width: 4px
+			height: 2px
+			width: 2px
 			background: #000
 			+border-radius(50%)
 // tags
@@ -1476,10 +1512,12 @@ input.error + label.error
 
 // footer
 .footer
+	position: relative
 	margin-top: -94px
 	padding-top: 20px
 	height: 94px
 	color: #fff
+	z-index: 1
 	+background-image(linear-gradient(left, #8ec63f 30%, #439dbc 100%))
 	+box
 	.contacts
