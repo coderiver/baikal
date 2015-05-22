@@ -251,4 +251,7 @@ head.ready(function() {
 			}, 1);
 		}
 	});
+
+	// select
+	$('.js-select').chosen({disable_search_threshold: 10});
 });

@@ -223,7 +223,7 @@ button.btn
 	vertical-align: middle
 	display: inline-block
 	&:hover
-		border: none
+		border-color: transparent
 	&.dotted_white
 		+dotted(#fff)
 
@@ -1274,6 +1274,8 @@ input.error + label.error
 	&:focus
 		+placeholder
 			font-size: 0
+	input[type="search"]
+		font-style: italic
 .textarea
 	padding: 10px 15px
 	height: 139px
@@ -1289,6 +1291,19 @@ input.error + label.error
 	text-align: left
 	font-weight: 300
 	display: block
+
+// select
+.select
+	width: 100%
+.chosen-container
+	width: 100% !important
+	&:before
+		position: absolute
+		content: ''
+		right: 16px
+		top: 50%
+		margin-top: -3px
+		+arr(11,6,#000,b)
 
 // radiobutton
 .radiobutton
