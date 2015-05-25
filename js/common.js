@@ -59,6 +59,7 @@ head.ready(function() {
 	}
 	sliderNav();
 
+	// gallery
 	$('.js-gall').slick({
 		slidesToShow: 4,
 		slidesToScroll: 4,
@@ -66,7 +67,122 @@ head.ready(function() {
 		dots: true,
 		speed: 600,
 		autoplay: true,
-		autoplaySpeed: 3000
+		autoplaySpeed: 3000,
+		responsive: [
+			{
+				breakpoint: 1219,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 2
+				}
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			},
+			{
+				breakpoint: 380,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		]
+	});
+
+	// partners
+	$('.js-partners-list').slick({
+		slidesToShow: 8,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		cssEase: 'linear',
+		autoplay: true,
+		speed: 600,
+		autoplaySpeed: 2000,
+		responsive: [
+			{
+				breakpoint: 1219,
+				settings: {
+					slidesToShow: 5,
+					slidesToScroll: 1,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 2
+				}
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 2
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1
+				}
+			}
+		]
+	});
+
+	$('.js-slider-workers').each(function() {
+		$(this).slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			arrows: false,
+			dots: false,
+			cssEase: 'linear',
+			autoplay: true,
+			speed: 600,
+			autoplaySpeed: 2000,
+			responsive: [
+				{
+					breakpoint: 1219,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 2
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+				},
+				{
+					breakpoint: 380,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+			]
+		});
 	});
 
 	// tab

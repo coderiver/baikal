@@ -71,11 +71,15 @@ body
 	font-size: 15px
 	font-weight: 300
 	line-height: 1.4
+	+r(1219)
+		font-size: 14px
 	&.is-home
 		.out
 			padding-top: 0
 			+r(991)
 				padding-top: 83px
+			+r(468)
+				padding-top: 80px
 			+r(410)
 				padding-top: 68px
 	&.is-error-page
@@ -249,6 +253,9 @@ body
 		color: #000
 		background-position: -200% 0
 		border-color: #000
+	+r(767)
+		padding: 0 20px
+		font-size: 14px
 	&.btn_black
 		color: #000
 		border-color: #000
@@ -287,6 +294,11 @@ body
 		min-width: 175px
 		line-height: 35px
 		border-radius: 39px
+		+r(765)
+			min-width: 165px
+			height: 35px
+			line-height: 31px
+			border-radius: 35px
 button.btn
 	line-height: 1
 
@@ -318,12 +330,21 @@ button.btn
 	font-weight: 600
 	line-height: 1
 	text-transform: uppercase
+	+r(767)
+		font-size: 40px
+	+r(600)
+		font-size: 30px
 
 .title-small
 	margin-bottom: 8px
 	font-size: 28px
 	font-weight: 300
 	line-height: 30px
+	+r(1219)
+		font-size: 24px
+	+r(767)
+		font-size: 22px
+		line-height: 25px
 
 .title-middle
 	text-align: center
@@ -331,6 +352,10 @@ button.btn
 	font-size: 38px
 	font-weight: 300
 	line-height: 25px
+	+r(1219)
+		font-size: 32px
+	+r(991)
+		font-size: 28px
 
 .title-green
 	color: #75b725
@@ -351,6 +376,8 @@ button.btn
 		padding: 90px 0 0
 	+r(991)
 		padding-top: 83px
+	+r(468)
+		padding-top: 80px
 	+r(410)
 		padding-top: 68px
 
@@ -695,27 +722,31 @@ button.btn
 	margin: 40px 0 30px
 	font-size: 0
 	text-align: center
-	&.nav-menu_mod
-		a
-			text-decoration: none
-			&:hover
-				color: #0164a5
-			&.is-active
-				color: #0164a5
-				font-weight: 700
+	+r(768)
+		margin: 20px 0 15px
 	li
 		margin-left: 40px
 		vertical-align: top
 		display: inline-block
 		+first
+		+r(768)
+			margin-left: 20px
+		+r(600)
+			margin: 5px 0 0
+			display: block
 	a
 		color: #0f98f2
 		font-size: 20px
 		font-weight: 300
 		line-height: 28px
-		text-decoration: underline
+		text-decoration: none
 		&:hover
-			text-decoration: none
+			color: #0164a5
+		&.is-active
+			color: #0164a5
+			font-weight: 700
+		+r(768)
+			font-size: 18px
 
 // content
 .content
@@ -723,6 +754,8 @@ button.btn
 	font-size: 15px
 	font-weight: 300
 	line-height: 1.8
+	+r(767)
+		font-size: 14px
 	h1
 		margin: 30px 0
 	h3
@@ -732,6 +765,8 @@ button.btn
 		line-height: 35px
 	p
 		margin-top: 30px
+		+r(992)
+			margin-top: 20px
 	a
 		color: #0f98f2
 	.item
@@ -772,6 +807,10 @@ h1
 	text-align: center
 	font-size: 66px
 	font-weight: 600
+	+r(992)
+		font-size: 46px
+	+r(992)
+		font-size: 36px
 
 // table
 .table
@@ -1000,6 +1039,10 @@ h1
 		height: 629px
 		width: 100%
 		+box
+		+r(991)
+			height: 329px
+		+r(767)
+			height: 280px
 		&.slider__slide_1
 			background: url(../img/slide-1.png) no-repeat 50% 50%
 			background-size: cover
@@ -1033,12 +1076,24 @@ h1
 		right: 0
 		padding-bottom: 90px
 		font-size: 33px
+		+r(991)
+			font-size: 20px
+		+r(767)
+			padding: 0 10px 90px
+			width: 100%
+			text-align: center
 	.slider__title
 		font-size: 50px
 		font-weight: 700
 		text-transform: uppercase
+		+r(991)
+			font-size: 30px
+		+r(767)
+			font-size: 20px
 	.slider__text
 		width: 480px
+		+r(767)
+			width: 100%
 	.slider__nav
 		position: absolute
 		left: 0
@@ -1055,6 +1110,8 @@ h1
 			display: inline-block !important
 	.slider__nav-text
 		margin-right: 5px
+		+r(767)
+			font-size: 0
 	.slick-dots
 		button
 			height: 30px
@@ -1082,6 +1139,8 @@ h1
 				bottom: 50%
 				+translate(-50%,50%)
 				+s(ico-play-small)
+	+r(767)
+		height: 352px
 
 // picture
 .picture
@@ -1106,14 +1165,34 @@ h1
 		+translate(-50%,0)
 		+transition(all .1s linear)
 		+s(ico-play)
+		+r(767)
+			bottom: 30px
+			+sr(ico-play)
+		+r(600)
+			bottom: 20px
+	+r(767)
+		font-size: 13px
+	.title
+		+r(767)
+			margin-bottom: 10px
 	.picture__in
 		margin: 30px auto 0
 		text-align: center
 		max-width: 1045px
+		+box
+		+r(767)
+			margin-top: 15px
+			padding: 0 10px
 	.picture__title
 		margin-top: 65px
 		font-size: 40px
 		font-weight: 300
+		+r(1219)
+			margin-top: 20px
+		+r(768)
+			font-size: 30px
+		+r(459)
+			font-size: 26px
 
 // devel
 .devel
@@ -1122,6 +1201,8 @@ h1
 	font-size: 20px
 	font-weight: 300
 	line-height: 28px
+	+r(768)
+		font-size: 14px
 
 // tab
 .tab
@@ -1130,6 +1211,8 @@ h1
 	&.tab_mod
 		.tab__cont
 			padding-top: 0
+			+r(991)
+				padding: 0 10px
 		.tab__in
 			margin: 0 auto
 			padding: 35px 0 60px
@@ -1139,9 +1222,13 @@ h1
 		height: 157px
 		+user-select(none)
 		background: url(../img/tab-nav-bg.png) repeat-x 0 0
+		+r(459)
+			padding-top: 5px
 	.tab__top
 		margin: 0 auto
 		max-width: 888px
+		+r(991)
+			padding: 0 10px
 	.tab__point
 		display: block
 		height: 10px
@@ -1165,8 +1252,12 @@ h1
 					&:before
 						width: 30px
 						height: 68px
+			+r(991)
+				padding-right: 120px
 		&:last-child
 			padding-left: 220px
+			+r(640)
+				padding-left: 100px
 			&.is-active
 				.tab__link
 					&:before
@@ -1188,6 +1279,21 @@ h1
 					+opacity(1)
 					z-index: 1
 					height: 95px
+					+r(459)
+						display: none
+		+r(459)
+			margin: 0
+			padding: 0
+			height: auto
+			text-align: center
+			&:first-child,
+			&:nth-child(3),
+			&:nth-child(4),
+			&:last-child
+				margin: 0
+				padding: 0
+				height: auto
+				text-align: center
 		.tab__link
 			color: #0f98f2
 			font-weight: 400
@@ -1200,7 +1306,7 @@ h1
 			&:active,
 			&:focus
 				text-decoration: none
-				border: none
+				border-color: transparent
 			&:before
 				position: absolute
 				content: ''
@@ -1215,11 +1321,26 @@ h1
 				height: 0
 				background-size: 100% 100%
 				+transition(height .15s linear)
+			+r(991)
+				font-size: 24px
+			+r(520)
+				font-size: 18px
+			+r(459)
+				font-size: 18px
+				line-height: 28px
 	.tab__list
 		position: absolute
 		left: 400px
 		top: 21px
 		font-size: 0
+		+r(1219)
+			top: 0
+		+r(991)
+			left: 0
+		+r(767)
+			position: relative
+			text-align: center
+			width: 100%
 	.tab__item
 		margin-left: 12px
 		display: inline-block
@@ -1235,6 +1356,16 @@ h1
 					width: 90%
 			.tab__link_4
 				+s(ico-tab-4-ac)
+				+r(768)
+					+sr(ico-tab-4-ac)
+		+r(1219)
+			margin: 0 40px 15px 0
+			&:first-child
+				margin: 0 40px 15px 0
+		+r(767)
+			margin-right: 15px
+			&:first-child
+				margin-right: 15px
 	.tab__link
 		position: relative
 		display: block
@@ -1255,24 +1386,44 @@ h1
 			+transition(all .12s linear)
 		&.tab__link_1
 			+s(ico-tab-1)
+			+r(768)
+				+sr(ico-tab-1)
 		&.tab__link_2
 			+s(ico-tab-2)
+			+r(768)
+				+sr(ico-tab-2)
 		&.tab__link_3
 			+s(ico-tab-3)
+			+r(768)
+				+sr(ico-tab-3)
 		&.tab__link_4
 			+s(ico-tab-4-ac)
+			+r(768)
+				+sr(ico-tab-4-ac)
 		&.tab__link_5
 			+s(ico-tab-5)
+			+r(768)
+				+sr(ico-tab-5)
 		&.tab__link_6
 			+s(ico-tab-6)
+			+r(768)
+				+sr(ico-tab-6)
 		&.tab__link_7
 			+s(ico-tab-7)
+			+r(768)
+				+sr(ico-tab-7)
 		&.tab__link_8
 			+s(ico-tab-8)
+			+r(768)
+				+sr(ico-tab-8)
 		&.tab__link_9
 			+s(ico-tab-9)
+			+r(768)
+				+sr(ico-tab-9)
 		&.tab__link_10
 			+s(ico-tab-10)
+			+r(768)
+				+sr(ico-tab-10)
 	.tab__cont
 		padding-top: 130px
 		text-align: left
@@ -1281,10 +1432,20 @@ h1
 		line-height: 24px
 		display: none
 		+clr
+		+r(1219)
+			padding-top: 160px
+		+r(991)
+			padding-left: 0
+			font-size: 15px
+		+r(767)
+			padding-top: 0
+			font-size: 14px
 	.tab__img
 		float: left
 		width: 400px
 		margin-top: -140px
+		+r(991)
+			display: none
 	.tab__text
 		overflow: hidden
 	.tab__title
@@ -1292,6 +1453,10 @@ h1
 		font-size: 38px
 		font-weight: 300
 		line-height: 1
+		+r(991)
+			text-align: center
+		+r(767)
+			font-size: 30px
 	.tab__row
 		font-size: 0
 		+clr
@@ -1303,6 +1468,12 @@ h1
 		+box
 		&:first-child
 			padding-right: 70px
+			+r(767)
+				padding-right: 0
+		+r(767)
+			padding: 0
+			font-size: 14px
+			width: 100%
 	.tags
 		float: left
 		margin-top: 20px
@@ -1314,6 +1485,10 @@ h1
 .info
 	margin: 35px 0
 	+clr
+	.col-md-6
+		+r(767)
+			margin-top: 10px
+			+first
 
 // news
 .news
@@ -1321,13 +1496,24 @@ h1
 	color: #fff
 	background: url(../img/news-bg.png) no-repeat 50% 50%
 	background-size: cover
+	+r(767)
+		p
+			margin-bottom: 20px
 	.row
 		&:first-child
-			margin-bottom: 33px
 			.btn
 				margin-left: 15px
+				+r(767)
+					margin-left: 10px
+		.title-small
+			margin-bottom: 33px
+			+r(991)
+				margin: 15px 0
+				text-align: center
 	img
 		margin-top: 6px
+		+r(767)
+			margin: 6px auto
 	.date
 		margin-top: 20px
 		+first
@@ -1342,6 +1528,8 @@ h1
 	.partners__list
 		width: 100%
 		display: table
+		+r(1219)
+			display: block
 	.partners__item
 		height: 60px
 		min-width: 90px
@@ -1365,9 +1553,20 @@ h1
 	color: #fff
 	background: url(../img/leadership-bg.png) no-repeat 50% 0
 	background-size: cover
+	+r(480)
+		padding-bottom: 40px
 	.leadership__in
 		margin: 0 auto
 		width: 980px
+		+r(1219)
+			padding-left: 5px
+			width: 960px
+			overflow: hidden
+		+r(991)
+			width: 720px
+		+r(768)
+			padding: 0 10px
+			width: 100%
 	.leadership__row
 		margin-top: 28px
 		font-size: 0
@@ -1378,13 +1577,16 @@ h1
 
 // worker
 .worker
-	margin-left: 2.2%
-	width: 18.2%
+	padding-right: 20px
+	width: 20%
 	font-size: 13px
 	font-weight: 300
 	vertical-align: top
 	display: inline-block
+	+box
 	+first
+	+r(768)
+		text-align: center
 	.worker__img
 		margin-bottom: 18px
 		img
@@ -1395,10 +1597,22 @@ h1
 		font-size: 15px
 		font-weight: 700
 
+.workers
+	+clr
+	+r(1219)
+		margin-right: -10px
+	.worker
+		float: left
+		display: block
+
 // dis-center
 .dis-center
 	text-align: center
 	padding: 65px 0 76px
+	+r(992)
+		padding: 35px 0 40px
+	+r(459)
+		padding-bottom: 0
 
 // gall
 .gall
@@ -1406,9 +1620,17 @@ h1
 	padding-bottom: 27px
 	overflow: hidden
 	height: 234px
+	+r(1219)
+		height: auto
+	+r(380)
+		padding-bottom: 40px
 	.gall__slide
 		float: left
+		+r(1219)
+			padding-left: 10px
 	.slick-dots
+		+r(380)
+			padding: 0 10px
 		button
 			font-size: 0
 			width: 12px
@@ -1429,9 +1651,16 @@ h1
 	border: 5px solid #75b725
 	background: url(../img/offer-bg.png) no-repeat 50% 50%
 	background-size: cover
+	+r(459)
+		display: none
 	.offer__in
 		margin: 0 auto
 		max-width: 980px
+		+r(1219)
+			max-width: 960px
+			padding: 0 10px
+		+r(992)
+			max-width: 720px
 	.offer__title
 		font-size: 33px
 		font-weight: 300
@@ -1444,6 +1673,12 @@ h1
 	line-height: 1.8
 	.title-middle
 		margin-bottom: 64px
+		+r(1219)
+			margin-bottom: 20px
+	.col-md-6
+		+r(767)
+			margin-top: 20px
+			text-align: center
 	img,
 	.ico
 		position: relative
@@ -1451,18 +1686,31 @@ h1
 		display: block
 		&.ico_inv-1
 			margin-top: -9px
+		+r(767)
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 15px
 	p
 		padding-right: 75px
+		+r(767)
+			padding: 0
 
 // actions
 .actions
 	padding: 83px 0
+	+r(1219)
+		padding: 40px 0
+	+r(991)
+		padding: 20px
 	.title-middle
 		margin-bottom: 35px
 		.btn
 			position: relative
 			margin-left: 5px
 			bottom: -2px
+	.col-md-3
+		+r(991)
+			margin-bottom: 20px
 
 // action
 .action
@@ -2073,6 +2321,10 @@ input.error + label.error
 		+r(991)
 			margin: 0 0 0 10px
 			display: inline-block
+		+r(767)
+			font-size: 0
+		+r(460)
+			margin: 0
 
 // copy, creator
 .creator,
@@ -2104,43 +2356,74 @@ input.error + label.error
 	z-index: 1
 	+background-image(linear-gradient(left, #8ec63f 30%, #439dbc 100%))
 	+box
+	+clr
 	+r(1219)
 		margin-top: 0
+		padding-bottom: 15px
 		height: auto
+	+r(767)
+		padding-bottom: 10px
 	.contacts,
 	.soc,
 	.address
 		vertical-align: top
 		display: inline-block
+	.contacts
+		width: 670px
 		+r(1219)
 			margin: 0
-			padding-left: 0
+			padding-left: 10px
 			width: 33%
 			&:first-child
 				padding-left: 0
-	.contacts
-		width: 680px
 		+r(991)
 			width: 100%
+		+r(767)
+			float: right
+			width: auto
+		+r(460)
+			width: 100%
+			text-align: center
 		.btn
 			top: -4px
 			+r(1219)
 				top: 0
 			+r(991)
 				top: -4px
+			+r(767)
+				top: 5px
 	.soc
 		margin-left: 20px
 		width: 178px
+		+r(1219)
+			margin: 0
+			padding-left: 10px
+			width: 33%
+			&:first-child
+				padding-left: 0
 		+r(991)
 			margin: 8px 0 0
 			width: 49%
+		+r(767)
+			margin: 0
+		+r(460)
+			width: 100%
+			text-align: center
 	.address
 		margin-left: 20px
 		max-width: 280px
+		+r(1219)
+			margin: 0
+			padding-left: 10px
+			width: 33%
+			&:first-child
+				padding-left: 0
 		+r(991)
 			position: relative
 			top: -18px
 			width: 49%
+		+r(767)
+			display: none
 		.dotted
 			margin-top: 5px
 

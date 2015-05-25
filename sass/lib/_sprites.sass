@@ -8,8 +8,8 @@ $icons: sprite-map("icons/*.png", $spacing: 10px)
 
 //for retina
 =image-sizer($path)
-	width: image-width($path) / 2
-	height: image-height($path) / 2
+	width: ceil(image-width($path) / 2)
+	height: ceil(image-height($path) / 2) + 1
 
 =sized-sprite($map, $sprite)
 	background: sprite($map, $sprite) no-repeat
@@ -35,7 +35,7 @@ $icons: sprite-map("icons/*.png", $spacing: 10px)
 	$ypos: round(nth(sprite-position($map, $sprite), 2) / 2)
 	background-position: 0 $ypos
 	+image-sizer(sprite-file($map, $sprite))
-	+background-size(ceil(image-width(sprite-path($map)) / 2), ceil(image-height(sprite-path($map)) / 2))
+	+background-size2x(ceil(image-width(sprite-path($map)) / 2), ceil(image-height(sprite-path($map)) / 2))
 
 //only image, when dimensions are useless
 =si($sprite, $map: $icons)
