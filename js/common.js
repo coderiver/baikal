@@ -2,11 +2,12 @@ head.ready(function() {
 
 	// click
 	$('body').on('click', function(){
-		$('.js-search').removeClass('is-active');
+		$('.js-search, .js-menu').removeClass('is-active');
 		$('.js-overlay, .js-date-inf, .js-date-arr').fadeOut();
+		$('.js-menu-block').removeClass('is-active');
 	});
 
-	$("body").on("click", ".js-date-inf", function(event){
+	$("body").on("click", ".js-date-inf, .js-open-menu", function(event){
 		event.stopPropagation();
 	});
 
@@ -21,15 +22,21 @@ head.ready(function() {
 
 	// fixed header
 	$(window).scroll(function() {
-		var scroll = $(window).scrollTop();
-			header = $('.header');
+
+		var scroll = $(window).scrollTop(),
+			header = $('.header'),
 			height = header.height();
 
-		if (scroll < 1) {
+		if (scroll < height) {
 			header.removeClass('is-fixed');
 		} else {
 			header.addClass('is-fixed');
 		}
+	});
+
+	$('.js-menu-link').on('click', function () {
+		$('.js-menu-block').toggleClass('is-active');
+		return false;
 	});
 
 	// slider
@@ -65,26 +72,37 @@ head.ready(function() {
 	// tab
 	function tab() {
 		$(".js-tab").each(function(){
-			var tabLink = $(this).find("a");
-				tabLinkAc = $(this).find("li.is-active a");
-				tabItem = $(this).find("li");
-				tabItemFirst = $(this).find("li:first");
-				tabCont = $(this).parents(".js-tab-group").find(".js-tab-cont");
-				tabContFirst = $(this).parents(".js-tab-group").find(".js-tab-cont:first");
+			var parent = $(this).parents(".js-tab-group"),
+				tabLink = $(this).find("a"),
+				tabLinkAc = $(this).find("li.is-active a"),
+				tabItem = $(this).find("li"),
+				tabItemFirst = $(this).find("li:first"),
+				tabCont = parent.find(".js-tab-cont"),
+				tabContFirst = parent.find(".js-tab-cont:first");
+
 			if (!tabItem.hasClass('is-active')) {
 				var index = tabLinkAc.attr("href");
 				tabItemFirst.addClass('is-active');
-				tabLinkAc.parents(".js-tab-group").find('.' + index).fadeIn();
-			}else {
+				tabContFirst.fadeIn();
+			} else {
 				var index = tabLinkAc.attr("href");
-				tabLinkAc.parents(".js-tab-group").find('.'+index+'').fadeIn();
+				tabLinkAc.parents(".js-tab-group").find("."+index).fadeIn();
 			}
+
+			if (parent.hasClass('is-catalog')) {
+				tabItemFirst.removeClass('is-active');
+				tabContFirst.hide();
+				tabLink.on("click", function() {
+					parent.find('.js-product').fadeOut();
+				});
+			}
+
 			tabLink.on("click", function() {
 				var index = $(this).attr("href");
 				tabItem.removeClass("is-active");
 				$(this).parent().addClass("is-active");
 				tabCont.hide();
-				$(this).parents(".js-tab-group").find("."+index).fadeIn();
+				parent.find("."+index).fadeIn();
 				return false;
 			});
 		});
@@ -142,9 +160,9 @@ head.ready(function() {
 				setTimeout(function(){
 					$('.js-form-down').hide();
 					errorText.removeClass('is-submit');
-					form.submit();
 				}, 1500);
 				formDisabled();
+				return false;
 			 },
 			invalidHandler: function(event, validator) {
 				var errors = validator.numberOfInvalids();
@@ -163,24 +181,12 @@ head.ready(function() {
 	$('.js-form').each(function(){
 		var errorText = $(this).find(".error-text");
 
-		function formDisabled() {
-			var form = $('.js-form');
-			form.each(function(){
-				var input = $(this).find('input[type="radio"], input[type="checkbox"]');
-				if ($(this).hasClass('is-disabled')) {
-					input.attr('disabled', 'disabled');
-				}
-				else {
-					input.removeAttr('disabled');
-				}
-			});
-		}
-		formDisabled();
-
 		$(this).validate({
 			rules: {
 				name: "required",
 				email: "required",
+				city_popup: "required",
+				message: "required",
 				phone: {
 					required: true,
 					minlength: 7
@@ -194,11 +200,10 @@ head.ready(function() {
 					errorText.fadeOut();
 					form.submit();
 				}, 1000);
-				formDisabled();
 			 },
 			invalidHandler: function(event, validator) {
-				var errors = validator.numberOfInvalids();
-				var errorText = $(this).find(".error-text");
+				var errors = validator.numberOfInvalids(),
+					errorText = $(this).find(".error-text");
 				if (errors) {
 					errorText.fadeIn();
 				} 
@@ -207,6 +212,14 @@ head.ready(function() {
 				}
 			},
 		});
+	});
+	$('input[name="phone"]').on('keyup', function(){
+		var value = $(this).val();
+		var re = /[^0-9,+_ ""()-]/;
+		if (re.test(value)) {
+			value = value.replace(re, '');
+			$(this).val(value);
+		}
 	});
 
 	// datepicker
@@ -254,4 +267,80 @@ head.ready(function() {
 
 	// select
 	$('.js-select').chosen({disable_search_threshold: 10});
+
+	// table method
+	$('.js-method').on('click', function() {
+		if ($(this).hasClass('is-choose')) {
+			$(this).removeClass('is-choose');
+		}
+		else {
+			$(this).addClass('is-choose');
+		}
+		return false;
+	});
+
+	// jScrollPane
+	$('.js-scroll-pane').each(function(){
+
+		$(this).jScrollPane({
+			showArrows: true,
+			horizontalDragMinWidth: 62,
+			horizontalDragMaxWidth: 62,
+			horizontalGutter: 30
+		});
+		var api = $(this).data('jsp');
+		var throttleTimeout;
+		$(window).bind('resize', function() {
+			if (!throttleTimeout) {
+				throttleTimeout = setTimeout( function() {
+					api.reinitialise();
+					widthHorizontalBar();
+					throttleTimeout = null;
+				}, 50 );
+			}
+		});
+
+		function widthHorizontalBar() {
+			var contWidth = $('.container').width();
+			if ($('body').find('.container' && '.js-scroll-pane')) {
+				$('.jspHorizontalBar').width(contWidth);
+			}
+		}
+		widthHorizontalBar();
+
+	});
+
+	// popup
+	$('.js-popup').on('click', function() {
+		$(this).fadeOut();
+		$('body').css({'overflow':'auto'});
+		if ($(window).width() < 1024) {
+			$('body').css({'position':'initial'});
+		}
+	});
+	$('.js-popup-close').on('click', function() {
+		$('.js-popup').trigger('click');
+	});
+	$(".js-popup-in").on("click", function(event){
+		event.stopPropagation();
+	});
+
+	// popup open
+	$('.js-open-popup').on('click', function() {
+		$('.js-popup').fadeIn();
+		$('body').css({'overflow':'hidden'});
+		if ($(window).width() < 1024) {
+			$('body').css({'position':'fixed'});
+		}
+	});
+
+	// fancybox
+	$('.js-fancybox').fancybox();
+
+	// open menu
+	
+	$('.js-open-menu').on('click', function() {
+		$('.js-menu').toggleClass('is-active');
+	});
+
 });

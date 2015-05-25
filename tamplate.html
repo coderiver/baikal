@@ -9,6 +9,7 @@
 	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
 	<link rel="stylesheet" media="all" href="css/bootstrap/bootstrap-theme.min.css" >
 	<link rel="stylesheet" media="all" href="css/bootstrap/bootstrap.min.css" >
+	<link rel="stylesheet" media="all" href="css/jquery.fancybox.css" >
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
@@ -41,13 +42,13 @@
 							<button class="search__sub" type="button">Найти</button>
 						</div>
 					</div>
-					<button class="btn" type="button">Связаться с нами</button>
+					<button class="btn js-open-popup" type="button">Связаться с нами</button>
 				</div>
 				<!-- menu -->
-				<nav class="menu">
+				<nav class="menu js-menu">
 					<li class="menu__item">
-						<a class="menu__link" href="javascript:void(0);">Продукты</a>
-						<div class="menu__block">
+						<a class="menu__link js-menu-link" href="#">Продукты</a>
+						<div class="menu__block js-menu-block">
 							<!-- commodity -->
 							<div class="commodity">
 								<a href="#" class="commodity__title">Байкал Т</a>
@@ -82,6 +83,8 @@
 					<li class="menu__item"><a class="menu__link" href="#">Пресс-центр</a></li>
 					<li class="menu__item"><a class="menu__link" href="#">Контакты</a></li>
 				</nav>
+				<!-- menu-btn -->
+				<button class="menu-btn js-open-menu" type="button"></button>
 			</div>
 		</div>
 	</header>
@@ -100,10 +103,10 @@
 					<a href="mailto:Info@baikalelectronics.ru">Info@baikalelectronics.ru</a>
 				</div>
 				<div class="contacts__col">
-					<button class="btn" type="button">Связаться с нами</button>
+					<button class="btn js-open-popup" type="button">Связаться с нами</button>
 				</div>
 			</div>
-			<div class="contacts__row">
+			<div class="contacts__row contacts__row_mod">
 				<div class="contacts__col">
 					<!-- copy -->
 					<div class="copy">
@@ -132,6 +135,39 @@
 		</address>
 	</div>
 </footer>
+<!-- popup -->
+<div class="popup js-popup">
+	<div class="popup__in js-popup-in">
+		<button class="popup__close js-popup-close" type="button"></button>
+		<h3 class="title-small">Связаться с нами</h3>
+		<div class="form__text">Все поля бязательны для заполнения</div>
+		<form class="form js-form">
+			<div class="form__row">
+				<label for="name1" class="label">Имя</label>
+				<input class="input" type="text" name="name" id="name1">
+			</div>
+			<div class="form__row">
+				<label for="city_popup" class="label">Город</label>
+				<input type="text" name="city_popup" id="city" class="input">
+			</div>
+			<div class="form__row">
+				<label for="phone1" class="label">Телефон</label>
+				<input class="input" type="phone" name="phone" id="phone1">
+			</div>
+			<div class="form__row">
+				<label for="email" class="label">Email</label>
+				<input type="email" name="email" id="email" class="input">
+			</div>
+			<div class="form__row">
+				<label for="message" class="label">Сообщение</label>
+				<textarea class="textarea" id="message"></textarea>
+			</div>
+			<div class="form__row">
+				<button class="btn btn_green" type="submit">Отправить</button>
+			</div>
+		</form>
+	</div>
+</div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
 </body>
