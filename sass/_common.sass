@@ -85,11 +85,10 @@ body
 	&.is-error-page
 		color: #fff
 		background: #000
-		.header,
 		.footer
 			background: none
-		.header.is-fixed
-			+background-image(linear-gradient(left, #8ec63f 40%, #439dbc 100%))
+		.header
+			background: #000
 		.search
 			margin-left: 0
 			&.is-active 
@@ -113,6 +112,10 @@ body
 			min-height: 485px
 			background: url(../img/error-bg.png) no-repeat 100% 0
 			background-size: auto 100%
+			+r(1219)
+				background-size: 100% 100%
+			+r(991)
+				text-align: center
 
 	a
 		color: #fff
@@ -256,6 +259,8 @@ body
 	+r(767)
 		padding: 0 20px
 		font-size: 14px
+	+r(460)
+		padding: 0 15px
 	&.btn_black
 		color: #000
 		border-color: #000
@@ -289,6 +294,8 @@ body
 			border-color: #0f98f2
 	&.btn_min
 		min-width: 179px
+		+r(1219)
+			min-width: inherit
 	&.btn_big
 		height: 39px
 		min-width: 175px
@@ -299,6 +306,12 @@ body
 			height: 35px
 			line-height: 31px
 			border-radius: 35px
+	&.btn_offset
+		margin-left: 22px
+		+first
+		+r(516)
+			margin: 20px auto 0
+			display: block
 button.btn
 	line-height: 1
 
@@ -316,6 +329,10 @@ button.btn
 		font-size: 18px
 		font-weight: 600
 		border-bottom-width: 2px
+		+r(1219)
+			font-size: 15px
+		+r(459)
+			font-size: 9px
 	&:hover
 		border-color: transparent
 
@@ -334,6 +351,8 @@ button.btn
 		font-size: 40px
 	+r(600)
 		font-size: 30px
+	+r(459)
+		font-size: 20px
 
 .title-small
 	margin-bottom: 8px
@@ -345,6 +364,8 @@ button.btn
 	+r(767)
 		font-size: 22px
 		line-height: 25px
+	+r(459)
+		font-size: 20px
 
 .title-middle
 	text-align: center
@@ -356,6 +377,8 @@ button.btn
 		font-size: 32px
 	+r(991)
 		font-size: 28px
+	+r(459)
+		font-size: 20px
 
 .title-green
 	color: #75b725
@@ -755,14 +778,19 @@ button.btn
 	font-weight: 300
 	line-height: 1.8
 	+r(767)
+		padding-bottom: 30px
 		font-size: 14px
 	h1
 		margin: 30px 0
+		+r(767)
+			margin: 20px 0
 	h3
 		margin: 20px 0
 		font-size: 38px
 		font-weight: 300
 		line-height: 35px
+		+r(767)
+			text-align: center
 	p
 		margin-top: 30px
 		+r(992)
@@ -771,10 +799,16 @@ button.btn
 		color: #0f98f2
 	.item
 		margin-top: 26px
+		+r(991)
+			min-height: 90px
 	.video_small
 		margin-top: 35px
-	table
+		+r(992)
+			margin-top: 0
+	.table-wrap
 		margin-top: 80px
+		+r(991)
+			margin-top: 40px
 	.prev, .next
 		margin-bottom: 0
 		span
@@ -801,19 +835,34 @@ button.btn
 			&:active,
 			&:active:focus
 				color: #0f98f2
+	.data
+		+r(767)
+			text-align: center
 
 // h1
 h1
 	text-align: center
 	font-size: 66px
 	font-weight: 600
+	+r(1219)
+		font-size: 56px
 	+r(992)
 		font-size: 46px
 	+r(992)
 		font-size: 36px
+	+r(767)
+		font-size: 30px
+	+r(460)
+		font-size: 20px
+
+// table-wrap
+.table-wrap
+	overflow: auto
+	margin-bottom: 20px
 
 // table
 .table
+	margin-bottom: 0
 	tr
 		td,th
 			&:first-child
@@ -823,6 +872,11 @@ h1
 				width: 500px
 			&:nth-child(3)
 				width: 200px
+			+r(1219)
+				&:first-child,
+				&:nth-child(2),
+				&:nth-child(3)
+					width: auto
 		th
 			height: 51px
 			line-height: 51px
@@ -864,6 +918,8 @@ h1
 .pag
 	margin: 25px 0
 	font-size: 0
+	+r(767)
+		text-align: center
 	li
 		vertical-align: top
 		display: inline-block
@@ -900,10 +956,14 @@ h1
 
 .cont
 	margin-top: 45px
+	+r(767)
+		text-align: center
 	.cont__img
 		margin-bottom: 25px
 		img
 			display: block
+		+r(767)
+			display: inline-block
 	.cont__name
 		font-size: 30px
 		font-weight: 600
@@ -1729,26 +1789,58 @@ h1
 .processor
 	.processor__row
 		margin-top: 50px
+		+r(991)
+			margin-top: 20px
 		.title-middle
 			text-align: left
+			+r(767)
+				margin-bottom: 0
+				text-align: center
 		.img_bord
 			margin-bottom: 42px
 	.title-middle
 		margin: 40px 0 25px
 		text-align: left
+		+r(991)
+			margin-top: 20px
+		+r(767)
+			text-align: center
 	.processor__text
 		font-size: 24px
 		text-align: center
 		line-height: 32px
+		+r(767)
+			font-size: 17px
+			line-height: 1.2
 	.processor__in
 		padding: 20px 18px
 		border: 2px solid #90c73e
 		+border-radius(17px)
 		+box
+	.processor__left
+		+r(767)
+			display: none
 	.list
 		margin-bottom: 30px
+		+r(767)
+			margin: 25px 0 0
 	.icons
 		margin-top: 12px
+	img
+		+r(1219)
+			width: 100%
+	.text-smbold
+		+r(767)
+			margin-top: 20px
+			text-align: center
+	.processor__right
+		+r(768)
+			text-align: center
+		.list li
+			+r(768)
+				margin-left: 6px
+				display: inline-block
+				+first
 
 // icons
 .icons
@@ -1760,6 +1852,11 @@ h1
 // application
 .application
 	+clr
+	+r(991)
+		text-align: center
+		font-size: 0
+	+r(767)
+		display: none
 	.title-middle
 		margin-bottom: 40px
 	.application__item
@@ -1767,10 +1864,23 @@ h1
 		padding: 0 35px
 		min-height: 155px
 		width: 20%
+		font-size: 15px
 		text-align: center
 		+box
+		+r(991)
+			float: none
+			width: 25%
+			vertical-align: top
+			display: inline-block
+		+r(767)
+			width: 33.3%
 	.ico
 		margin-bottom: 5px
+
+// flowcharts
+.flowcharts
+	+r(767)
+		display: none
 
 // advantages
 .advantages
@@ -1797,7 +1907,7 @@ h1
 		content: ''
 		top: 0
 		left: 0
-		bottom: 0
+		bottom: 60px
 		width: 20px
 		z-index: 1
 		+box-shadow(inset 15px 0 20px #fff)
@@ -1806,7 +1916,7 @@ h1
 		content: ''
 		top: 0
 		right: 0
-		bottom: 0
+		bottom: 60px
 		width: 20px
 		z-index: 1
 		+box-shadow(inset -15px 0 20px #fff)
@@ -1816,6 +1926,8 @@ h1
 		height: 680px
 		overflow: visible !important
 		font-size: 0
+		+r(1219)
+			height: auto
 	.processor
 		position: relative
 		margin-left: 20px
@@ -1826,6 +1938,11 @@ h1
 		vertical-align: top
 		display: inline-block
 		+first
+		+r(767)
+			font-size: 15px
+		+r(460)
+			width: 280px
+			font-size: 14px
 	.title-middle
 		margin-top: 0
 		padding-left: 20px
@@ -1833,6 +1950,8 @@ h1
 		padding: 10px 20px 98px
 		white-space: nowrap
 		+box
+		+r(1219)
+			padding-bottom: 88px
 	.jspDrag
 		background: none
 		&:before
@@ -1878,6 +1997,8 @@ h1
 // catalog
 .catalog
 	margin-top: 45px
+	+r(459)
+		margin-top: 25px
 	.title-middle
 		margin-bottom: 25px
 	.catalog__topic
@@ -1886,15 +2007,23 @@ h1
 		margin-right: -0.5%
 		margin-bottom: 30px
 		font-size: 0
+		text-align: center
 	.catalog__item
 		margin: 0.5% 0.5% 0 0
 		width: 19.5%
 		font-size: 15px
 		vertical-align: top
 		display: inline-block
+		+r(1219)
+			width: 24.5%
+		+r(991)
+			width: 32.7%
+		+r(737)
+			width: 49.5%
+		+r(459)
+			width: 95.5%
 		a
 			padding: 19px 16px 10px
-			text-align: center
 			color: #0f98f2
 			cursor: pointer
 			border: 3px solid transparent
@@ -1913,6 +2042,8 @@ h1
 		display: none
 	.ico
 		margin-bottom: 8px
+		+r(737)
+			display: none
 
 // product
 .product
@@ -1921,24 +2052,41 @@ h1
 	background: url(../img/product-bg.png) no-repeat 50% 50%
 	background-size: cover
 	+clr
+	+r(767)
+		text-align: center
 	p
 		margin-top: 20px
 	.product__left
 		float: left
 		padding: 50px 0 0 15px
 		width: 310px
+		+r(1219)
+			width: 100%
+			padding-top: 20px
 	.product__title
 		margin-bottom: 30px
 		font-size: 66px
 		font-weight: 600
+		+r(1219)
+			font-size: 55px
+			text-align: center
+		+r(991)
+			font-size: 40px
 	.product__text
 		padding-right: 85px
+		+r(1219)
+			padding-right: 0
 	.product__right
 		float: right
 		margin-left: 10px
 		width: 380px
+		+r(1219)
+			margin: 20px 0 0
+			width: 100%
 	.goods
 		+first
+		+r(1219)
+			padding-right: 20px
 
 // goods
 .goods
@@ -2204,9 +2352,13 @@ input.error + label.error
 .prev,
 .next
 	margin: 35px 0 45px
+	+r(767)
+		margin: 25px 0 35
 	a
 		font-size: 20px
 		font-weight: 700
+		+r(767)
+			font-size: 18px
 	span
 		font-size: 37px
 		font-weight: 400
@@ -2220,6 +2372,8 @@ input.error + label.error
 // field
 .field
 	margin-top: 35px
+	+r(991)
+		margin-top: 25px
 
 // date
 .date

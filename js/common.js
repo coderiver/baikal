@@ -383,7 +383,23 @@ head.ready(function() {
 
 	// select
 	$('.js-select').chosen({disable_search_threshold: 10});
-
+	// chosen resize
+	// function chosenResize() {
+	// 	if ($(window).width() < 1219) {
+	// 		$('.js-select').chosen({disable_search_threshold: 10});
+	// 	} else {
+	// 		$('.js-select').chosen('destroy');
+	// 	}
+	// 	// $(window).resize(function() {
+	// 	// 	if ($(window).width() < 1219) {
+	// 	// 		$('.js-select').chosen({disable_search_threshold: 10});
+	// 	// 	} else {
+	// 	// 		$('.js-select').chosen('destroy');
+	// 	// 	}
+	// 	// });
+	// }
+	// chosenResize();
+	
 	// table method
 	$('.js-method').on('click', function() {
 		if ($(this).hasClass('is-choose')) {
