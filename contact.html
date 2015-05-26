@@ -44,6 +44,7 @@
 					</div>
 					<button class="btn js-open-popup" type="button">Связаться с нами</button>
 				</div>
+				
 				<!-- menu -->
 				<nav class="menu js-menu">
 					<li class="menu__item">
@@ -88,6 +89,98 @@
 			</div>
 		</div>
 	</header>
+	<!-- container -->
+	<div class="container">
+		<!-- content -->
+		<div class="content">
+			<h1>Контакты</h1>
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8 col-sm-12">
+					<h3>Головной офис</h3>
+					<p>143421, Московская область, Красногорский р-н, <br> 26 км автодороги «Балтия», бизнес-центр RigaLand, блок Б, 2-й этаж</p>
+					<p></p>
+					<div><strong>Тел: +7 495 221-39-47</strong></div>
+					<div><strong>Факс: +7 495 221-39-48</strong></div>
+					<p></p>
+					<div><strong>По будням с 10:00 до 20:00</strong></div>
+					<div><strong>В выходные с 11:00 до 20:00</strong></div>
+					<p><a href="mailto:info@baikalelectronics.ru">info@baikalelectronics.ru</a></p>
+					<h3 class="title-miggle">Контакты с прессой</h3>
+					<!-- item -->
+					<div class="item">
+						<img src="img/cont-img.png" alt="img">
+						<div class="item__text">
+							<!-- cont -->
+							<div class="cont">
+								<div class="cont__name">Андрей Малафеев</div>
+								<div class="cont__text">маркетинговые коммуникации и связи с общественностью</div>
+							<p><a href="mailto:info@baikalelectronics.ru" class="cont__mail">info@baikalelectronics.ru</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<h3>Связаться с нами</h3>
+					<!-- form -->
+					<form class="form js-form">
+						<div class="form__row">
+							<label for="name-questions" class="label">Имя</label>
+							<input class="input" type="text" name="name" id="name-questions">
+						</div>
+						<div class="form__row">
+							<label for="phone-questions" class="label">Телефон</label>
+							<input class="input" type="phone" name="phone" id="phone-questions">
+						</div>
+						<div class="form__row">
+							<label for="email-questions" class="label">Email</label>
+							<input type="email" name="email" id="email-questions" class="input">
+						</div>
+						<div class="form__row">
+							<label for="message" class="label">Вопрос *</label>
+							<textarea class="textarea" name="questions" id="message"></textarea>
+						</div>
+						<div class="form__row">
+							<button class="btn btn_green" type="submit">Отправить</button>
+							<span class="form__imp">* Обязательные поля</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- row -->
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="title-middle">Как к нам проехать?</h3>
+				<!-- map -->
+				<div class="map" id="map"></div>
+				<!-- content -->
+				<div class="content">
+					<div class="col-md-6 col-sm-12">
+						<h2>На автомобиле</h2>
+						<div>Новорижское шоссе, 9 км от МКАД</div>
+						<p>По Новорижскому шоссе мимо ТЦ HOFF, ТЦ Hunday и ТЦ Major. У АЗС «Лукойл» свернуть по указателю «Бизнес-центр RIGA LAND 0,8».Проехать мимо КПП со шлагбаумом и через 200 метров заехать на гостевой паркинг.Вход на территорию бизнес-центра через калитку.</p>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<h2>На бесплатном автобусе</h2>
+						<div>От метро «Щукинская» и «Строгино» (по будням с 7:00 до 20:30</div>
+						<p>Метро «Щукинская» 
+Последний вагон из центра, выход в город налево и ещё раз налево. Остановка бесплатного автобуса находится на улице Маршала Василевского напротив (через дорогу от) дома 13, строение 1, рядом с остановкой общественного транспорта «Метро Щукинская» (дополнительный ориентир — остановка автобусов 105 и 60).</p>
+						<p>Метро «Строгино» 
+Последний вагон из центра, по эскалатору, направо и ещё раз направо. Остановка автобуса, следующего в бизнес-центр, находится прямо у выхода из метро.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<!-- next -->
+				<div class="next pull-right">
+					<a href="#" class="blue">Распечатать схему проезда</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- END out-->
 <!-- footer -->
@@ -170,5 +263,6 @@
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </body>
 </html>

@@ -646,6 +646,17 @@ button.btn
 .search-download
 	margin-top: 10px
 
+// search-item
+.search-item
+	margin-top: 30px
+	.search-item__title
+		display: block
+	.changed,
+	.path,
+	.path a
+		color: #999
+		font-size: 13px
+
 // menu
 .menu
 	margin-top: 40px
@@ -784,6 +795,13 @@ button.btn
 		margin: 30px 0
 		+r(767)
 			margin: 20px 0
+	h2
+		margin: 15px 0
+		font-size: 28px
+		font-weight: 300
+		line-height: 35px
+		+r(767)
+			text-align: center
 	h3
 		margin: 20px 0
 		font-size: 38px
@@ -1002,8 +1020,11 @@ h1
 // img
 .img
 	display: block
+	max-width: 100%
 	&.img_bord
 		border: 3px solid #77c632
+	+r(767)
+		margin-top: 10px
 
 // lang
 .lang
@@ -1591,15 +1612,15 @@ h1
 		+r(1219)
 			display: block
 	.partners__item
-		height: 60px
-		min-width: 90px
+		height: 80px
+		min-width: 0px
 		line-height: 60px
 		display: table-cell
 	.ico
 		position: relative
 		vertical-align: middle
 		&:hover
-			+transform(scale(1.1))
+			+transform(scale(1.05))
 		&.ico_part-7
 			bottom: -8px
 // way
@@ -1757,7 +1778,9 @@ h1
 
 // actions
 .actions
-	padding: 83px 0
+	padding: 53px 0
+	&.actions_mod
+		padding: 10px 0 50px
 	+r(1219)
 		padding: 40px 0
 	+r(991)
@@ -1891,7 +1914,8 @@ h1
 	background-size: cover
 	.row
 		margin-top: 34px
-		+first
+		&:first-child
+			margin-top: 0
 	.title-small
 		font-weight: 600
 		line-height: 26px
@@ -2107,6 +2131,22 @@ h1
 		line-height: 1.1
 		font-weight: 400
 
+// share
+.share
+	.share__text,
+	.share__in
+		vertical-align: top
+		display: inline-block
+	.share__text
+		margin-right: 10px
+
+// map
+.map
+	margin-bottom: 25px
+	height: 400px
+	+r(767)
+		height: 200px
+
 // popup
 .popup
 	position: fixed
@@ -2147,6 +2187,8 @@ h1
 			margin-top: 2px
 			font-size: 13px
 			max-width: 180px
+			+r(1219)
+				font-size: 13px
 		.form__row
 			&:last-child
 				text-align: center

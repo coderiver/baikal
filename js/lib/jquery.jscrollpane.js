@@ -436,7 +436,7 @@
 				container.find('>.jspHorizontalBar>.jspCap:visible,>.jspHorizontalBar>.jspArrow').each(
 					function()
 					{
-						if ($('body').find('.container')) {
+						if ($('body').find('.jspScrollable.js-scroll-pane')) {
 							var contWidth = $('.container').width(),
 								windWidth = $(window).width(),
 								paddWidth = (windWidth - contWidth) / 4,
@@ -462,7 +462,7 @@
 					$(horizontalBar).find('>.jspCap:visible,>.jspArrow').each(
 						function()
 						{
-							if ($('body').find('.container')) {
+							if ($('body').find('.jspScrollable.js-scroll-pane')) {
 								var contWidth = $('.container').width(),
 									windWidth = $(window).width(),
 									paddWidth = (windWidth - contWidth) / 4,

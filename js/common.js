@@ -303,6 +303,7 @@ head.ready(function() {
 				email: "required",
 				city_popup: "required",
 				message: "required",
+				questions: "required",
 				phone: {
 					required: true,
 					minlength: 7
@@ -383,22 +384,6 @@ head.ready(function() {
 
 	// select
 	$('.js-select').chosen({disable_search_threshold: 10});
-	// chosen resize
-	// function chosenResize() {
-	// 	if ($(window).width() < 1219) {
-	// 		$('.js-select').chosen({disable_search_threshold: 10});
-	// 	} else {
-	// 		$('.js-select').chosen('destroy');
-	// 	}
-	// 	// $(window).resize(function() {
-	// 	// 	if ($(window).width() < 1219) {
-	// 	// 		$('.js-select').chosen({disable_search_threshold: 10});
-	// 	// 	} else {
-	// 	// 		$('.js-select').chosen('destroy');
-	// 	// 	}
-	// 	// });
-	// }
-	// chosenResize();
 	
 	// table method
 	$('.js-method').on('click', function() {
@@ -434,7 +419,7 @@ head.ready(function() {
 
 		function widthHorizontalBar() {
 			var contWidth = $('.container').width();
-			if ($('body').find('.container' && '.js-scroll-pane')) {
+			if ($('.jspScrollable').hasClass('js-scroll-pane')) {
 				$('.jspHorizontalBar').width(contWidth);
 			}
 		}
@@ -470,9 +455,22 @@ head.ready(function() {
 	$('.js-fancybox').fancybox();
 
 	// open menu
-	
 	$('.js-open-menu').on('click', function() {
 		$('.js-menu').toggleClass('is-active');
+	});
+
+	// map
+	$('#map').each(function () {
+		function initialize() {
+			var mapOptions = {
+				center: { lat: -34.397, lng: 150.644},
+				zoom: 12,
+		  		disableDefaultUI: true
+			};
+			var map = new google.maps.Map(document.getElementById('map'),
+			mapOptions);
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
 	});
 
 });
