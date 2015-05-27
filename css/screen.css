@@ -95,7 +95,7 @@ body a:focus, body a:visited { text-decoration: none; }
 .ico.ico_categ-9 { background: url('../img/icons-sca7f559eed.png') 0 -2690px no-repeat; width: 84px; height: 84px; }
 .ico.ico_categ-10 { background: url('../img/icons-sca7f559eed.png') 0 -1938px no-repeat; width: 84px; height: 84px; }
 
-.btn { position: relative; padding: 0 22px; height: 29px; line-height: 25px; color: white; letter-spacing: 0.1px; vertical-align: top; font-size: 15px; font-weight: 600; border-radius: 29px; border: 2px solid #f6f8fa; background-repeat: no-repeat; background-size: 200% 100%; background-position: 200% 0; display: inline-block; background-color: initial; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.btn { position: relative; padding: 0 22px; height: 29px; line-height: 25px; color: white; letter-spacing: 0.1px; vertical-align: top; font-size: 15px; font-weight: 600; border-radius: 29px; border: 2px solid #f6f8fa; background-repeat: no-repeat; background-size: 200% 100%; background-position: 200% 0; display: inline-block; background-color: transparent; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .btn:hover, .btn:focus, .btn:active, .btn:active:focus { outline: none; color: black; background-position: -200% 0; border-color: black; }
 @media only screen and (max-width: 767px) { .btn { padding: 0 20px; font-size: 14px; } }
 @media only screen and (max-width: 460px) { .btn { padding: 0 15px; } }
@@ -457,6 +457,7 @@ h1 { text-align: center; font-size: 66px; font-weight: 600; }
 .tab .tab__item:hover .tab__link .tab__shad, .tab .tab__item.is-active .tab__link .tab__shad { opacity: 1; width: 90%; }
 .tab .tab__item:hover .tab__link_4, .tab .tab__item.is-active .tab__link_4 { background: url('../img/icons-sca7f559eed.png') 0 -4844px no-repeat; width: 67px; height: 66px; }
 @media only screen and (max-width: 768px) { .tab .tab__item:hover .tab__link_4, .tab .tab__item.is-active .tab__link_4 { background: url('../img/icons-sca7f559eed.png') 0 -4844px no-repeat; background-position: 0 -2422px; width: 34px; height: 34px; -moz-background-size: 291px 2842px; -webkit-background-size: 291px 2842px; background-size: 291px 2842px; } }
+@media only screen and (max-width: r1219px) { .tab .tab__item:hover { -moz-transform: translate(0, 0); -ms-transform: translate(0, 0); -webkit-transform: translate(0, 0); transform: translate(0, 0); } }
 @media only screen and (max-width: 1219px) { .tab .tab__item { margin: 0 40px 15px 0; }
   .tab .tab__item:first-child { margin: 0 40px 15px 0; } }
 @media only screen and (max-width: 767px) { .tab .tab__item { margin-right: 15px; }
