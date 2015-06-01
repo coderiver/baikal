@@ -8,7 +8,7 @@
 	<!-- <meta name="viewport" content="width=1200"> -->
 	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
 	<link rel="stylesheet" media="all" href="css/bootstrap/bootstrap-theme.min.css" >
-	<link rel="stylesheet" media="all" href="css/bootstrap/bootstrap.min.css" >
+	<link rel="stylesheet" media="all" href="css/bootstrap/bootstrap.css" >
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
@@ -78,7 +78,15 @@
 							</div>
 						</div>
 					</li>
-					<li class="menu__item"><a class="menu__link" href="questions-and-answers.html">Помощь</a></li>
+					<li class="menu__item">
+						<a class="menu__link js-menu-link" href="#">Помощь</a>
+						<div class="menu__block menu__block_mod js-menu-block">
+							<div class="commodity commodity_mod">
+								<a href="questions-and-answers.html">Вопросы и ответы</a>
+								<a href="baikal-11-04-podbor_i_skachivanie-1200.html">Драйверы и промофайлы</a>
+							</div>
+						</div>
+					</li>
 					<li class="menu__item"><a class="menu__link" href="baikal-11-03-about.html">О компании</a></li>
 					<li class="menu__item"><a class="menu__link" href="baikal-11-08-press.html">Пресс-центр</a></li>
 					<li class="menu__item"><a class="menu__link" href="contact.html">Контакты</a></li>
@@ -262,11 +270,11 @@
 					<form class="form js-form">
 						<div class="datepicker">
 							<!-- days info -->
-							<div class="day-inf js-date-inf" id="27-05-2015">
+							<div class="day-inf js-date-inf" id="06-06-2015">
 								<date class="date">11 марта 2015</date>
 								<a href="#" target="_blank">Программно-аппаратный комплекс SecurOS Premium - платформа для построения интегрированных систем безопасности (базовый курс</a>
 							</div>
-							<div class="day-inf js-date-inf" id="28-05-2015">
+							<div class="day-inf js-date-inf" id="28-06-2015">
 								<date class="date">11 марта 2015</date>
 								<a href="#" target="_blank">Программно-аппаратный комплекс SecurOS Premium </a>
 							</div>
@@ -277,7 +285,7 @@
 							<strong>Получать анонсы мероприятий по email</strong>
 						</div>
 						<div class="form__row">
-							<input class="input" type="text" placeholder="Ваш email">
+							<input class="input" name="email" type="email" placeholder="Ваш email">
 						</div>
 						<div class="form__row">
 							<button class="btn btn_green btn_min">Отправить</button>
@@ -361,7 +369,7 @@
 				</div>
 				<div class="contacts__col">
 					<!-- creator -->
-					<div class="creator">Разработка сайта — <a href="#" target="_blank">Individ.ru</a></div>
+					<div class="creator"><a href="#" target="_blank">Разработка сайта — Individ.ru</a></div>
 				</div>
 			</div>
 		</div>
@@ -406,7 +414,7 @@
 			</div>
 			<div class="form__row">
 				<label for="message" class="label">Сообщение</label>
-				<textarea class="textarea" id="message"></textarea>
+				<textarea class="textarea" name="message" id="message"></textarea>
 			</div>
 			<div class="form__row">
 				<button class="btn btn_green" type="submit">Отправить</button>

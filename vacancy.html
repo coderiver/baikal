@@ -79,7 +79,15 @@
 							</div>
 						</div>
 					</li>
-					<li class="menu__item"><a class="menu__link" href="questions-and-answers.html">Помощь</a></li>
+					<li class="menu__item">
+						<a class="menu__link js-menu-link" href="#">Помощь</a>
+						<div class="menu__block menu__block_mod js-menu-block">
+							<div class="commodity commodity_mod">
+								<a href="questions-and-answers.html">Вопросы и ответы</a>
+								<a href="baikal-11-04-podbor_i_skachivanie-1200.html">Драйверы и промофайлы</a>
+							</div>
+						</div>
+					</li>
 					<li class="menu__item"><a class="menu__link" href="baikal-11-03-about.html">О компании</a></li>
 					<li class="menu__item"><a class="menu__link" href="baikal-11-08-press.html">Пресс-центр</a></li>
 					<li class="menu__item"><a class="menu__link" href="contact.html">Контакты</a></li>
@@ -106,11 +114,13 @@
 						Уровень зарплаты: обсуждается на собеседовании<br>
 						Место работы: Московская область, Красногорский р-н, 26-й км автодороги М9 «Балтия», бизнес-центр RigaLand
 					</p>
-					<h2>Обязанности:</h2>
-					<ul class="list">
-						<li>разработка составляющих компонент SOC</li>
-					</ul>
-					<h2>Требования:</h2>
+					<div class="top-50">
+						<h4>Обязанности:</h4>
+						<ul class="list">
+							<li>разработка составляющих компонент SOC</li>
+						</ul>
+					</div>
+					<h4>Требования:</h4>
 					<p><strong>Базовые требования:</strong></p>
 					<ul class="list">
 						<li>Навыки разработки RTL (Verilog / System Verilog, и т.п.);</li>
@@ -133,15 +143,23 @@
 					</ul>
 				</div>
 				<div class="col-md-4 col-sm-5">
-					<h3>Наши преимущества</h3>
-					<h2>Комфортные условия</h2>
-					<p>Просторный офис на Новорижско</p>
-					<h2>Амбициозные задачи</h2>
-					<p>Интересная работа в одной из самых технологичных компаний страны.</p>
-					<h2>Талантливый коллектив</h2>
-					<p>Отличная команда, с которой приятно работать и отдыхать.</p>
-					<h2>Компенсации и льготы</h2>
-					<p>Стабильная и достойная заработная плата, годовые премии и медицинская страховка.</p>
+					<h3 class="h3">Наши преимущества</h3>
+					<div class="top-50">
+						<h4>Комфортные условия</h4>
+						<p>Просторный офис на Новорижском шоссе и лаборатория в Зеленограде.</p>
+					</div>
+					<div class="top-50">
+						<h4>Амбициозные задачи</h4>
+						<p>Интересная работа в одной из самых технологичных компаний страны.</p>
+					</div>
+					<div class="top-50">
+						<h4>Талантливый коллектив</h4>
+						<p>Отличная команда, с которой приятно работать и отдыхать.</p>
+					</div>
+					<div class="top-50">
+						<h4>Компенсации и льготы</h4>
+						<p>Стабильная и достойная заработная плата, годовые премии и медицинская страховка.</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -178,7 +196,11 @@
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-6">
 								<label class="label">Резюме</label>
-								<input type="file"  class="input">
+								<div class="input-file">
+									<div class="input-file__lab" id="js-input-lab">Файл не выбран</div>
+									<input type="file" class="input js-input-file" >
+									<button class="btn btn_black">Обзор</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -219,7 +241,7 @@
 				</div>
 				<div class="contacts__col">
 					<!-- creator -->
-					<div class="creator">Разработка сайта — <a href="#" target="_blank">Individ.ru</a></div>
+					<div class="creator"><a href="#" target="_blank">Разработка сайта — Individ.ru</a></div>
 				</div>
 			</div>
 		</div>
@@ -264,7 +286,7 @@
 			</div>
 			<div class="form__row">
 				<label for="message" class="label">Сообщение</label>
-				<textarea class="textarea" id="message"></textarea>
+				<textarea class="textarea" name="message" id="message"></textarea>
 			</div>
 			<div class="form__row">
 				<button class="btn btn_green" type="submit">Отправить</button>

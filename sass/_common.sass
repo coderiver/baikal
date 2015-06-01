@@ -116,7 +116,12 @@ body
 				background-size: 100% 100%
 			+r(991)
 				text-align: center
-
+			+r(767)
+				background-size: initial
+				background-position: 0 0
+	.container.is-full
+		padding: 0
+		width: 100%
 	a
 		color: #fff
 		+transition(all .1s linear)
@@ -248,14 +253,6 @@ body
 	background-color: transparent
 	+transition(all .2s linear)
 	+box
-	&:hover,
-	&:focus,
-	&:active,
-	&:active:focus
-		outline: none
-		color: #000
-		background-position: -200% 0
-		border-color: #000
 	+r(767)
 		padding: 0 20px
 		font-size: 14px
@@ -264,12 +261,13 @@ body
 	&.btn_black
 		color: #000
 		border-color: #000
-		&:hover,
-		&:focus,
-		&:active,
-		&:active:focus
-			color: #0f98f2
-			border-color: #0f98f2
+	&:hover,
+	&:focus,
+	&:active,
+	&:active:focus
+		color: #0f98f2
+		outline: none
+		border-color: #0f98f2
 	&.btn_green
 		height: 39px
 		color: #fff
@@ -334,7 +332,8 @@ button.btn
 		+r(459)
 			font-size: 9px
 	&:hover
-		border-color: transparent
+		color: #0f98f2
+		border-color: #0f98f2
 
 // blue
 .blue
@@ -445,10 +444,13 @@ button.btn
 				padding: 10px 227px 10px 139px
 			+r(991)
 				padding: 20px 55px 20px 139px
-			+r(520)
-				padding: 15px 55px 15px 139px
+			+r(517)
+				padding: 22px 55px 28px 139px
 		.search__btn
 			font-size: 0
+			&:hover
+				&:before
+					+translate(0,-1px)
 			&:before
 				position: absolute
 				top: -5px
@@ -460,6 +462,8 @@ button.btn
 				top: 30px
 			+r(991)
 				top: 10px
+			+r(516)
+				top: 20px
 		.lang
 			display: none
 		.btn,
@@ -472,6 +476,7 @@ button.btn
 		.btn.btn_black
 			position: relative
 			top: auto
+			display: block
 		.search
 			right: 192px
 		.header__top
@@ -496,6 +501,9 @@ button.btn
 			float: right
 			+r(1219)
 				margin-top: 0
+			&.is-active
+				+r(991)
+					margin: 20px -40px 0 -140px
 			.menu__link
 				font-size: 17px
 				font-weight: 400
@@ -508,6 +516,8 @@ button.btn
 		.menu-btn
 			+r(991)
 				top: 12px
+			+r(516)
+				top: 24px
 	.header__in
 		position: relative
 		padding: 10px 0 0 344px
@@ -535,7 +545,8 @@ button.btn
 		+r(467)
 			font-size: 13px
 		+r(410)
-			font-size: 0
+			font-size: 10px
+			margin: 0
 	.btn
 		float: right
 	.lang,
@@ -563,7 +574,7 @@ button.btn
 	+r(767)
 		top: 25px
 	+r(410)
-		top: 15px
+		top: 22px
 
 // search
 .search
@@ -587,6 +598,8 @@ button.btn
 			font-size: 15px
 			+opacity(1)
 			+transition(all .3s linear)
+		// .search__sub
+		// 	background: #0f98f2
 	.search__btn
 		position: relative
 		margin-top: 2px
@@ -596,6 +609,8 @@ button.btn
 		font-weight: 600
 		background: none
 		+transition(all .3s linear)
+		&:hover
+			text-decoration: underline
 		&:before
 			position: absolute
 			content: ''
@@ -634,13 +649,16 @@ button.btn
 		line-height: 25px
 		text-align: center
 		width: 71px
-		text-shadow: 0 0 30px rgba(13, 61, 108, 0.75)
 		color: #0f98f2
 		font-family: "Open Sans"
 		font-size: 0
 		font-weight: 600
-		background: none
+		background-color: #eef0f1
+		+border-radius(0 25px 25px 0)
 		+opacity(0)
+		&:hover
+			+rm(1219)
+				background: #ddd
 
 // search-download
 .search-download
@@ -733,6 +751,14 @@ button.btn
 					display: none
 			&:first-child
 				padding-bottom: 0
+			&.commodity_mod
+				padding-bottom: 5px
+				a
+					margin-bottom: 15px
+					font-size: 20px
+					font-weight: 600
+					color: #0f98f2
+					display: block
 		.btn
 			font-size: 15px
 			font-weight: 600
@@ -748,8 +774,6 @@ button.btn
 		display: block
 	+r(767)
 		top: 25px
-	+r(410)
-		top: 17px
 
 // nac-menu
 .nav-menu
@@ -775,7 +799,7 @@ button.btn
 		line-height: 28px
 		text-decoration: none
 		&:hover
-			color: #0164a5
+			text-decoration: underline
 		&.is-active
 			color: #0164a5
 			font-weight: 700
@@ -788,6 +812,10 @@ button.btn
 	font-size: 15px
 	font-weight: 300
 	line-height: 1.8
+	&.content_b80
+		padding-bottom: 80px
+		+r(767)
+			margin-bottom: 30px
 	+r(767)
 		padding-bottom: 30px
 		font-size: 14px
@@ -796,12 +824,9 @@ button.btn
 		+r(767)
 			margin: 20px 0
 	h2
-		margin: 15px 0
-		font-size: 28px
-		font-weight: 300
-		line-height: 35px
-		+r(767)
-			text-align: center
+		margin: 30px 0
+		font-size: 50px
+		font-weight: 600
 	h3
 		margin: 20px 0
 		font-size: 38px
@@ -809,9 +834,16 @@ button.btn
 		line-height: 35px
 		+r(767)
 			text-align: center
+	h4
+		margin-top: 20px
+		font-size: 28px
+		font-weight: 300
+		line-height: 35px
+		+r(767)
+			text-align: center
 	p
-		margin-top: 30px
-		+r(992)
+		margin-top: 20px
+		+r(991)
 			margin-top: 20px
 	a
 		color: #0f98f2
@@ -821,7 +853,7 @@ button.btn
 			min-height: 90px
 	.video_small
 		margin-top: 35px
-		+r(992)
+		+r(991)
 			margin-top: 0
 	.table-wrap
 		margin-top: 80px
@@ -833,13 +865,13 @@ button.btn
 			line-height: 27px
 	.btn
 		color: #fff
-		&:hover,
-			&:focus,
-			&:active,
-			&:active:focus
-				color: #000
 		&.btn_black
 			color: #000
+		&:hover,
+		&:focus,
+		&:active,
+		&:active:focus
+			color: #0f98f2
 		&.btn_green
 			color: #fff
 			&:hover,
@@ -847,15 +879,14 @@ button.btn
 			&:active,
 			&:active:focus
 				color: #fff
-		&.btn_h-blue
-			&:hover,
-			&:focus,
-			&:active,
-			&:active:focus
-				color: #0f98f2
+				border-color: #0f98f2
+				background: #0f98f2
 	.data
 		+r(767)
 			text-align: center
+
+.top-50
+	margin-top: 50px
 
 // h1
 h1
@@ -895,42 +926,48 @@ h1
 				&:nth-child(2),
 				&:nth-child(3)
 					width: auto
-		th
-			height: 51px
-			line-height: 51px
+	thead > tr > th,
+	tbody > tr > th,
+	tfoot > tr > th,
+	th
+		height: 51px
+		line-height: 51px
+		font-size: 18px
+		font-weight: 600
+		background-color: #eef0f1
+		a
+			position: relative
+			padding-right: 20px
 			font-size: 18px
 			font-weight: 600
-			background-color: #eef0f1
-			a
-				position: relative
-				padding-right: 20px
-				font-size: 18px
-				font-weight: 600
-				line-height: 1.4
-				color: #000
-				&:hover
-					text-decoration: underline
+			line-height: 1.4
+			color: #000
+			&:hover
+				text-decoration: underline
+			&:before
+				position: absolute
+				content: ''
+				right: 0
+				top: 50%
+				margin-top: -5px
+				+arr(11,11,#77c632,t)
+			&.is-choose
 				&:before
-					position: absolute
-					content: ''
-					right: 0
-					top: 50%
-					margin-top: -5px
-					+arr(11,11,#77c632,t)
-				&.is-choose
-					&:before
-						+rotate(180)
-		td
-			height: 63px
-			line-height: 63px
-			font-size: 13px
-			font-weight: 600
-			border-bottom: 2px solid #eef0f1
-			a
-				color: #0f98f2
-			.ico
-				line-height: 1
-				vertical-align: middle
+					+rotate(180)
+	thead > tr > td,
+	tbody > tr > td,
+	tfoot > tr > td,
+	td
+		height: 63px
+		line-height: 63px
+		font-size: 13px
+		font-weight: 600
+		border-bottom: 2px solid #eef0f1
+		a
+			color: #0f98f2
+		.ico
+			line-height: 1
+			vertical-align: middle
 
 // pagination
 .pag
@@ -974,6 +1011,8 @@ h1
 
 .cont
 	margin-top: 45px
+	&.cont_mod
+		margin-top: 0
 	+r(767)
 		text-align: center
 	.cont__img
@@ -985,10 +1024,13 @@ h1
 	.cont__name
 		font-size: 30px
 		font-weight: 600
+		line-height: 1
 	.cont__mail
 		color: #0f98f2
 		font-size: 20px
 		font-weight: 300
+	.cont__text
+		line-height: 1.2
 
 // item
 .item
@@ -1007,7 +1049,7 @@ h1
 	img,
 	.ico
 		float: left
-		margin: 4px 28px 0 0
+		margin: 4px 28px 10px 0
 	.item__text
 		overflow: hidden
 	.item__title
@@ -1015,7 +1057,9 @@ h1
 		font-weight: 600
 		line-height: 1.2
 	.date
+		margin-bottom: 5px
 		font-weight: 700
+		line-height: 1
 
 // img
 .img
@@ -1043,9 +1087,9 @@ h1
 		display: inline-block
 		+first
 	a
-		width: 30px
-		height: 30px
-		line-height: 30px
+		width: 31px
+		height: 31px
+		line-height: 31px
 		text-align: center
 		font-size: 14px
 		border-radius: 50%
@@ -1237,14 +1281,15 @@ h1
 	background-size: cover
 	&:hover
 		&:before
-			+opacity(.9)
+			+s(ico-play-hov)
+			+r(767)
+				+sr(ico-play-hov)
 	&:before
 		position: absolute
 		content: ''
 		left: 50%
 		bottom: 60px
 		+translate(-50%,0)
-		+transition(all .1s linear)
 		+s(ico-play)
 		+r(767)
 			bottom: 30px
@@ -1305,6 +1350,8 @@ h1
 		background: url(../img/tab-nav-bg.png) repeat-x 0 0
 		+r(459)
 			padding-top: 5px
+			height: 190px
+			background-size: cover
 	.tab__top
 		margin: 0 auto
 		max-width: 888px
@@ -1335,7 +1382,7 @@ h1
 						height: 68px
 			+r(991)
 				padding-right: 120px
-		&:last-child
+		&:nth-child(5)
 			padding-left: 220px
 			+r(640)
 				padding-left: 100px
@@ -1350,11 +1397,21 @@ h1
 				.tab__link
 					&:before
 						+rotate(180)
+		&:nth-child(6)
+			padding: 10px 50px 0 0
+			text-align: right
+			+r(767)
+				padding-right: 40px
+			&.is-active
+				.tab__link
+					&:before
+						height: 50px
+						width: 20px
 		&.is-active
 			.tab__link
 				color: #0e7ac0
 				font-weight: 700
-				border: none
+				border-color: #0e7ac0
 				&:before
 					visibility: visible
 					+opacity(1)
@@ -1370,6 +1427,7 @@ h1
 			&:first-child,
 			&:nth-child(3),
 			&:nth-child(4),
+			&:nth-child(5),
 			&:last-child
 				margin: 0
 				padding: 0
@@ -1428,20 +1486,99 @@ h1
 		vertical-align: top
 		+first
 		+box
-		&:hover,
 		&.is-active
 			.tab__link
-				+translate(0,-10px)
+				top: -10px
 				.tab__shad
 					opacity: 1
 					width: 90%
+			.tab__link_1
+				+s(ico-tab-1-ac)
+				+r(768)
+					+sr(ico-tab-1-ac)
+			.tab__link_2
+				+s(ico-tab-2-ac)
+				+r(768)
+					+sr(ico-tab-2-ac)
+			.tab__link_3
+				+s(ico-tab-3-ac)
+				+r(768)
+					+sr(ico-tab-3-ac)
 			.tab__link_4
 				+s(ico-tab-4-ac)
 				+r(768)
 					+sr(ico-tab-4-ac)
-		&:hover
-			+r(r1219)
-				+translate(0,0)
+			.tab__link_5
+				+s(ico-tab-5-ac)
+				+r(768)
+					+sr(ico-tab-5-ac)
+			.tab__link_6
+				+s(ico-tab-6-ac)
+				+r(768)
+					+sr(ico-tab-6-ac)
+			.tab__link_7
+				+s(ico-tab-7-ac)
+				+r(768)
+					+sr(ico-tab-7-ac)
+			.tab__link_8
+				+s(ico-tab-8-ac)
+				+r(768)
+					+sr(ico-tab-8-ac)
+			.tab__link_9
+				+s(ico-tab-9-ac)
+				+r(768)
+					+sr(ico-tab-9-ac)
+			.tab__link_10
+				+s(ico-tab-10-ac)
+				+r(768)
+					+sr(ico-tab-10-ac)
+		+rm(1219)
+			&:hover
+				.tab__link
+					top: -10px
+					.tab__shad
+						opacity: 1
+						width: 90%
+				.tab__link_1
+					+s(ico-tab-1-ac)
+					+r(768)
+						+sr(ico-tab-1-ac)
+				.tab__link_2
+					+s(ico-tab-2-ac)
+					+r(768)
+						+sr(ico-tab-2-ac)
+				.tab__link_3
+					+s(ico-tab-3-ac)
+					+r(768)
+						+sr(ico-tab-3-ac)
+				.tab__link_4
+					+s(ico-tab-4-ac)
+					+r(768)
+						+sr(ico-tab-4-ac)
+				.tab__link_5
+					+s(ico-tab-5-ac)
+					+r(768)
+						+sr(ico-tab-5-ac)
+				.tab__link_6
+					+s(ico-tab-6-ac)
+					+r(768)
+						+sr(ico-tab-6-ac)
+				.tab__link_7
+					+s(ico-tab-7-ac)
+					+r(768)
+						+sr(ico-tab-7-ac)
+				.tab__link_8
+					+s(ico-tab-8-ac)
+					+r(768)
+						+sr(ico-tab-8-ac)
+				.tab__link_9
+					+s(ico-tab-9-ac)
+					+r(768)
+						+sr(ico-tab-9-ac)
+				.tab__link_10
+					+s(ico-tab-10-ac)
+					+r(768)
+						+sr(ico-tab-10-ac)
 		+r(1219)
 			margin: 0 40px 15px 0
 			&:first-child
@@ -1453,7 +1590,7 @@ h1
 	.tab__link
 		position: relative
 		display: block
-		+transition(all .12s linear)
+		+transition(top .12s linear)
 		+box
 		.tab__shad
 			position: absolute
@@ -1481,9 +1618,9 @@ h1
 			+r(768)
 				+sr(ico-tab-3)
 		&.tab__link_4
-			+s(ico-tab-4-ac)
+			+s(ico-tab-4)
 			+r(768)
-				+sr(ico-tab-4-ac)
+				+sr(ico-tab-4)
 		&.tab__link_5
 			+s(ico-tab-5)
 			+r(768)
@@ -1798,6 +1935,18 @@ h1
 		+r(991)
 			margin-bottom: 20px
 
+// accord
+.accord
+	margin-top: 10px
+	&.is-active
+		.accord__in
+			display: block
+	.accord__title
+		cursor: pointer
+		display: block
+	.accord__in
+		display: none
+
 // action
 .action
 	color: #000
@@ -1827,6 +1976,11 @@ h1
 	.title-middle
 		margin: 40px 0 25px
 		text-align: left
+		color: #000
+		display: block
+		&:hover
+			color: #0f98f2
+			text-decoration: none
 		+r(991)
 			margin-top: 20px
 		+r(767)
@@ -1860,14 +2014,13 @@ h1
 			margin-top: 20px
 			text-align: center
 	.processor__right
-		+r(768)
+		+r(460)
 			text-align: center
 		.list li
-			+r(768)
+			+r(460)
 				margin-left: 6px
 				display: inline-block
 				+first
-
 // icons
 .icons
 	font-size: 0
@@ -1877,27 +2030,26 @@ h1
 
 // application
 .application
+	font-size: 0
 	+clr
 	+r(991)
 		text-align: center
-		font-size: 0
 	+r(767)
 		display: none
 	.title-middle
 		margin-bottom: 40px
+		text-align: center
 	.application__item
-		float: left
-		padding: 0 35px
-		min-height: 155px
+		padding: 0 35px 5px
+		min-height: 150px
 		width: 20%
 		font-size: 15px
 		text-align: center
+		vertical-align: top
+		display: inline-block
 		+box
 		+r(991)
-			float: none
 			width: 25%
-			vertical-align: top
-			display: inline-block
 		+r(767)
 			width: 33.3%
 	.ico
@@ -1950,11 +2102,18 @@ h1
 	strong
 		font-size: 20px
 	.compare__pane
-		height: 680px
-		overflow: visible !important
-		font-size: 0
-		+r(1219)
-			height: auto
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			right: 0
+			bottom: 72px
+			z-index: 2
+			display: none
+			+r(1219)
+				display: block
 	.processor
 		position: relative
 		margin-left: 20px
@@ -1963,63 +2122,74 @@ h1
 		white-space: normal
 		font-size: 17px
 		vertical-align: top
+		height: 100%
 		display: inline-block
 		+first
 		+r(767)
+			height: auto
 			font-size: 15px
 		+r(460)
 			width: 280px
 			font-size: 14px
+		.processor__in
+			height: 475px
 	.title-middle
+		position: relative
 		margin-top: 0
 		padding-left: 20px
+		z-index: 3
 	.compare__in
-		padding: 10px 20px 98px
-		white-space: nowrap
+		padding: 10px 0 98px
+		height: 680px
+		overflow: hidden
+		font-size: 0
 		+box
 		+r(1219)
+			height: 620px
 			padding-bottom: 88px
-	.jspDrag
-		background: none
+	.mCustomScrollBox
+		position: absolute
+		bottom: 0
+
+// scroll
+.mCSB_scrollTools.mCSB_scrollTools_horizontal
+	bottom: 35px
+	opacity: 1
+	.mCSB_draggerContainer
+		width: 1100px
+		margin: 0 auto
+		&:before
+			position: absolute
+			content: ''
+			left: -40px
+			top: -3px
+			+s(arr-pane-left)
+		&:after
+			position: absolute
+			content: ''
+			right: -40px
+			top: -3px
+			+s(arr-pane-right)
+	.mCSB_draggerRail
+		position: relative
+		background: #0f98f2
+		height: 7px
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: -33px
+			right: -33px
+			bottom: 0
+			background: #0f98f2
+	.mCSB_dragger_bar
 		&:before
 			position: absolute
 			content: ''
 			top: 50%
 			left: 50%
-			+translate(-50%,-50%)
+			+translate(-50%, -50%)
 			+s(ico-drag)
-	.jspContainer
-		overflow: visible
-	.jspHorizontalBar
-		left: 50%
-		height: 26px
-		bottom: 31px
-		+translate(-50%,0)
-		width: auto
-		background: none
-		.jspTrack
-			margin-top: 10px
-			height: 7px
-			background: #0f98f2
-			&:before
-				position: absolute
-				content: ''
-				top: 0
-				left: -9px
-				right: -9px
-				bottom: 0
-				+border-radius(2px)
-				background: #0f98f2
-		.jspCap
-			height: 100%
-			display: block
-		.jspArrow
-			position: relative
-			z-index: 2
-		.jspArrowLeft
-			+s(arr-pane-left)
-		.jspArrowRight
-			+s(arr-pane-right)
 
 // catalog
 .catalog
@@ -2071,6 +2241,11 @@ h1
 		margin-bottom: 8px
 		+r(737)
 			display: none
+	.product
+		a
+			&:hover
+				color: #0f98f2
+				text-decoration: none
 
 // product
 .product
@@ -2083,6 +2258,12 @@ h1
 		text-align: center
 	p
 		margin-top: 20px
+		+r(767)
+			text-shadow: 2px 2px 2px #000, -2px -2px 2px #000
+	.goods
+		+r(767)
+			p
+				text-shadow: none
 	.product__left
 		float: left
 		padding: 50px 0 0 15px
@@ -2133,6 +2314,9 @@ h1
 		font-size: 39px
 		line-height: 1.1
 		font-weight: 400
+		&:hover
+			color: #0f98f2
+			text-decoration: none
 
 // share
 .share
@@ -2216,6 +2400,19 @@ h1
 	&.is-disabled
 		.btn
 			display: none
+		.field
+			&:last-child
+				margin-top: 0
+	&.form_bot
+		+r(991)
+			margin: 25px 0
+		.checkbox
+			margin: 0
+			+r(991)
+				margin-top: 15px
+	.btn
+		&.is-down
+			display: none
 	.form__row
 		margin-top: 15px
 	.form__text
@@ -2227,22 +2424,27 @@ h1
 		margin: 8px 0 0 30px
 		vertical-align: top
 		display: inline-block
+		+r(460)
+			margin-left: 0
+			text-align: left
 	.radiobutton
 		margin: 4px 18px 0 0
 	label
 		font-weight: 300
 
-input.error
+input.error,
+textarea.error
 	border-color: red
 
-input.error + label.error
+input.error + label.error,
+textarea.error + label.error
 	display: none !important
 
 .error-text
 	color: #ED1B24
 	font-size: 17px
 	font-weight: 600
-	text-align: center
+	text-align: left
 	display: none
 	&.is-submit
 		color: #4BBE59
@@ -2267,6 +2469,45 @@ input.error + label.error
 	height: 139px
 	resize: none
 	+border-radius(18px)
+
+// input-file
+.input-file
+	position: relative
+	padding: 6px 100px 6px 15px
+	height: 39px
+	width: 100%
+	border: 2px solid #000
+	+border-radius(39px)
+	+box
+	+clr
+	.input-file__lab
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+	.input
+		position: absolute
+		top: 3px
+		right: 3px
+		width: 96px
+		height: 29px
+		z-index: 2
+		cursor: pointer
+		+opacity(0)
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+		&:hover
+			& + .btn
+				color: #0f98f2
+				border-color: #0f98f2
+	.btn
+		position: absolute
+		top: 3px
+		right: 3px
 
 // label
 .label
@@ -2312,6 +2553,7 @@ input.error + label.error
 		width: 19px
 		margin: 0
 		z-index: 5
+		cursor: pointer
 		+opacity(0)
 		&:checked
 			& + span
@@ -2348,12 +2590,13 @@ input.error + label.error
 	+user-select(none)
 	input
 		position: absolute
-		top: 1px
+		top: 4px
 		left: 0
 		height: 19px
 		width: 19px
 		margin: 0
 		z-index: 5
+		cursor: pointer
 		+opacity(0)
 		&:checked
 			& + .checkbox__text
@@ -2365,7 +2608,7 @@ input.error + label.error
 		&:before
 			position: absolute
 			content: ''
-			top: 1px
+			top: 4px
 			left: 0
 			height: 19px
 			width: 19px
@@ -2373,7 +2616,7 @@ input.error + label.error
 		&:after
 			position: absolute
 			content: ''
-			top: 5px
+			top: 9px
 			left: 3px
 			+s(arr-checked)
 			display: none
@@ -2417,8 +2660,9 @@ input.error + label.error
 // field
 .field
 	margin-top: 35px
+	+clr
 	+r(991)
-		margin-top: 25px
+		margin-top: 15px
 
 // date
 .date
@@ -2456,6 +2700,8 @@ input.error + label.error
 	&.list_green
 		li
 			&:before
+				height: 4px
+				width: 4px
 				top: 8px
 				background: #7ac814
 	li
@@ -2562,6 +2808,8 @@ input.error + label.error
 		height: auto
 	+r(767)
 		padding-bottom: 10px
+	a:hover
+		color: #0f98f2
 	.contacts,
 	.soc,
 	.address
@@ -2605,6 +2853,7 @@ input.error + label.error
 			width: 49%
 		+r(767)
 			margin: 0
+			padding: 0
 		+r(460)
 			width: 100%
 			text-align: center

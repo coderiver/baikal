@@ -3,6 +3,8 @@
 	position: relative
 	padding: 15px
 	border: 3px solid #90c73e
+	+r(1219)
+		padding: 10px
 	th,
 	td
 		text-align: center
@@ -15,28 +17,39 @@
 		height: 42px
 		+r(1219)
 			height: 32px
-		a
-			margin: 4px
-			height: 34px
 			width: 34px
+		a
+			position: relative
 			line-height: 30px
-			border: 2px solid transparent
-			+border-radius(50%)
+			min-width: 19px
 			display: inline-block
 			+box
+			&:before
+				position: absolute
+				content: ''
+				height: 34px
+				width: 34px
+				top: 50%
+				left: 50%
+				+translate(-50%,-50%)
+				border: 2px solid #0f98f2
+				+border-radius(50%)
+				+box
+				display: none
+				+r(1219)
+					width: 30px
+					height: 30px
 			&:hover
-				border-color: #0f98f2
-			+r(1219)
-				height: 30px
-				width: 30px
-				line-height: 26px
+				&:before
+					display: block
 	a
 		color: #61676b
 		&:hover
 			text-decoration: none
 	td.event
 		a
-			border-color: #0f98f2
+			&:before
+				display: block
 	.datepicker__arr
 		position: absolute
 		display: none
@@ -44,8 +57,8 @@
 		&:before
 			position: absolute
 			content: ''
-			top: 0
-			left: 15px
+			top: -10px
+			left: 0
 			+arr(9,8,#90c73e,b)
 	.day-inf
 		.date
@@ -104,9 +117,11 @@
 		.ui-state-default
 			color: #fff
 			font-weight: 700
-			background-color: #77c632
-			&:hover
+			&:before
+				display: block
+				background-color: #77c632
 				border-color: transparent
+				z-index: -1
 	.ui-datepicker-unselectable
 		a
 			border-color: #0f98f2
