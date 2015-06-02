@@ -194,6 +194,7 @@ button.btn { line-height: 1; }
 .header .header__top { *zoom: 1; }
 .header .header__top:after { content: " "; display: table; clear: both; }
 @media only screen and (max-width: 991px) { .header .header__top { text-align: center; } }
+.header .header__top .btn { top: -2px; }
 .header .header__info { margin: 2px 8px 0 0; font-size: 15px; font-weight: 600; vertical-align: top; display: inline-block; }
 @media only screen and (max-width: 991px) { .header .header__info { display: block; } }
 @media only screen and (max-width: 767px) { .header .header__info { margin: 0 0 5px; } }
