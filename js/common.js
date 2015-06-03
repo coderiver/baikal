@@ -1,13 +1,22 @@
 head.ready(function() {
 
+	// touchstart
+	var agent = navigator.userAgent,
+		event = (agent.match(/iPad/i)) ? "touchstart" : "click";
+
 	// click
-	$('body').on('click', function(){
-		$('.js-search, .js-menu').removeClass('is-active');
+	$('body').on('click', function() {
+		$('.js-search').removeClass('is-active');
 		$('.js-overlay, .js-date-inf, .js-date-arr').fadeOut();
 		$('.js-menu-block').removeClass('is-active');
+
+	});
+	
+	$('body').on('click, touchstart', function() {
+		$('.js-menu').removeClass('is-active');
 	});
 
-	$("body").on("click", ".js-date-inf, .js-open-menu", function(event){
+	$("body").on("click, touchstart", ".js-date-inf, .js-open-menu, .js-menu", function(event){
 		event.stopPropagation();
 	});
 
@@ -239,6 +248,15 @@ head.ready(function() {
 				}
 				return false;
 			});
+			if ($(window).width() < 460) {
+				tabLink.on('click', function(){
+					var page = $(this).attr("href");
+					$('html, body').animate({
+						scrollTop: $('.' + page).offset().top - 80
+					}, 600);
+					return false;
+				});
+			}
 		});
 	}
 	tab();
@@ -432,6 +450,16 @@ head.ready(function() {
 	// select
 	$('.js-select').chosen({disable_search_threshold: 10});
 	
+	// select-mob
+	function selectMob() {
+		$('.js-select').each(function() {
+			$(this).on('change', function() {
+				var val = $(this).find('option:selected').text();
+				$(this).parent().find('.chosen-single span').text(val);
+			});
+		});
+	}
+	selectMob();
 	// table method
 	$('.js-method').on('click', function() {
 		if ($(this).hasClass('is-choose')) {

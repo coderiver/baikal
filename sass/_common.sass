@@ -124,7 +124,7 @@ body
 		width: 100%
 	a
 		color: #fff
-		+transition(all .1s linear)
+		+transition(color .1s linear)
 		&:focus,
 		&:visited
 			text-decoration: none
@@ -251,7 +251,7 @@ body
 	background-position: 200% 0
 	display: inline-block
 	background-color: transparent
-	+transition(all .2s linear)
+	+transition(color, border-color, background, .2s linear)
 	+box
 	+r(767)
 		padding: 0 20px
@@ -310,6 +310,8 @@ body
 		+r(516)
 			margin: 20px auto 0
 			display: block
+	&.btn_w100
+		width: 100%
 button.btn
 	line-height: 1
 
@@ -321,6 +323,10 @@ button.btn
 	background: none
 	vertical-align: middle
 	display: inline-block
+	&.blue
+		&:hover
+			color: #0164a5
+			border-color: #0164a5
 	&.dotted_white
 		+dotted(#fff)
 	&.dotted_big
@@ -419,7 +425,7 @@ button.btn
 	a
 		+transition(none)
 		&.btn
-			+transition(all .2s linear)
+			+transition(color, border-color, background, .2s linear)
 	+r(1219)
 		height: auto
 	&.header_home
@@ -435,7 +441,7 @@ button.btn
 		height: 66px
 		+box-shadow(0 5px 5px rgba(0, 0, 0, 0.16))
 		+background-image(linear-gradient(left, #8ec63f 40%, #439dbc 100%))
-		background-attachment: fixed
+		// background-attachment: fixed
 		+r(1219)
 			height: auto
 		.header__in
@@ -533,7 +539,7 @@ button.btn
 		+r(991)
 			text-align: center
 		.btn
-			top: -2px
+			margin-top: -2px
 	.header__info
 		margin: 2px 8px 0 0
 		font-size: 15px
@@ -599,7 +605,6 @@ button.btn
 		.search__sub
 			font-size: 15px
 			+opacity(1)
-			+transition(all .3s linear)
 		// .search__sub
 		// 	background: #0f98f2
 	.search__btn
@@ -610,8 +615,8 @@ button.btn
 		font-size: 15px
 		font-weight: 600
 		background: none
-		+transition(all .3s linear)
 		&:hover
+			color: #0f98f2
 			text-decoration: underline
 		&:before
 			position: absolute
@@ -634,7 +639,7 @@ button.btn
 		z-index: -1
 		visibility: hidden
 		+opacity(0)
-		+transition(all .2s linear)
+		+transition(width, overflow, .2s linear)
 		input
 			padding: 0 75px 0 30px
 			width: 100%
@@ -720,12 +725,12 @@ button.btn
 	.menu__block
 		position: absolute
 		top: 100%
-		left: 0
+		left: -25px
 		padding-top: 17px
 		visibility: hidden
 		+opacity(0)
 		z-index: -1
-		+transition(all .1s linear)
+		+transition(opacity .1s linear)
 		&.is-active
 			visibility: visible
 			+opacity(1)
@@ -738,6 +743,7 @@ button.btn
 			position: relative
 			padding-top: 0
 			height: 0
+			left: 0
 			overflow: hidden
 			width: 100%
 			&:before
@@ -887,8 +893,8 @@ button.btn
 		+r(767)
 			text-align: center
 
-.top-50
-	margin-top: 50px
+.top-25
+	margin-top: 25px
 
 // h1
 h1
@@ -914,6 +920,7 @@ h1
 // table
 .table
 	margin-bottom: 0
+	min-width: 600px
 	tr
 		td,th
 			&:first-child
@@ -1246,7 +1253,7 @@ h1
 			font-size: 20px
 			background: none
 			+rob
-			+transition(all .1s linear)
+			+transition(background .1s linear)
 			+box
 		li
 			margin-right: 2px
@@ -1375,7 +1382,7 @@ h1
 			margin-bottom: 25px
 			text-align: right
 		&:nth-child(4)
-			padding-right: 220px
+			padding-right: 280px
 			text-align: right
 			&.is-active
 				.tab__link
@@ -1383,10 +1390,14 @@ h1
 						width: 30px
 						height: 68px
 			+r(991)
-				padding-right: 120px
+				padding-right: 250px
+			+r(768)
+				padding-right: 210px
+			+r(600)
+				padding-right: 130px
 		&:nth-child(5)
 			padding-left: 220px
-			+r(640)
+			+r(767)
 				padding-left: 100px
 			&.is-active
 				.tab__link
@@ -1442,12 +1453,12 @@ h1
 			line-height: 32px
 			border-bottom: 1px dotted #0f98f2
 			display: inline-block
-			+transition(all .15s linear)
+			+transition(border-color, color, .15s linear)
 			&:hover,
 			&:active,
 			&:focus
 				text-decoration: none
-				border-color: transparent
+				border-color: #0e7ac0
 			&:before
 				position: absolute
 				content: ''
@@ -2105,17 +2116,28 @@ h1
 		font-size: 20px
 	.compare__pane
 		position: relative
-		&:before
-			position: absolute
-			content: ''
-			top: 0
-			left: 0
-			right: 0
-			bottom: 72px
-			z-index: 2
-			display: none
-			+r(1219)
-				display: block
+		// &:before
+		// 	position: absolute
+		// 	content: ''
+		// 	top: 0
+		// 	left: 0
+		// 	width: 30%
+		// 	bottom: 72px
+		// 	z-index: 2
+		// 	display: none
+		// 	+r(1219)
+		// 		display: block
+		// &:after
+		// 	position: absolute
+		// 	content: ''
+		// 	top: 0
+		// 	right: 0
+		// 	width: 30%
+		// 	bottom: 72px
+		// 	z-index: 2
+		// 	display: none
+		// 	+r(1219)
+		// 		display: block
 	.processor
 		position: relative
 		margin-left: 20px
@@ -2443,6 +2465,7 @@ textarea.error + label.error
 	display: none !important
 
 .error-text
+	margin-top: 15px
 	color: #ED1B24
 	font-size: 17px
 	font-weight: 600
@@ -2504,12 +2527,14 @@ textarea.error + label.error
 			bottom: 0
 		&:hover
 			& + .btn
-				color: #0f98f2
+				background: #0f98f2
 				border-color: #0f98f2
 	.btn
 		position: absolute
 		top: 3px
 		right: 3px
+		height: 29px
+		line-height: 26px
 
 // label
 .label
@@ -2522,8 +2547,25 @@ textarea.error + label.error
 	display: block
 
 // select
+.select-wrap
+	position: relative
+	.chosen-container-single .chosen-single 
+		+r(767)
+			height: 25px
+			line-height: 21px
+			+border-radius(25px)
+			
 .select
 	width: 100%
+	+r(767)
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 9
+		opacity: 0
+		display: block !important
 .chosen-container
 	width: 100% !important
 	&.chosen-with-drop
@@ -2610,7 +2652,7 @@ textarea.error + label.error
 		&:before
 			position: absolute
 			content: ''
-			top: 4px
+			top: 1px
 			left: 0
 			height: 19px
 			width: 19px
@@ -2618,7 +2660,7 @@ textarea.error + label.error
 		&:after
 			position: absolute
 			content: ''
-			top: 9px
+			top: 6px
 			left: 3px
 			+s(arr-checked)
 			display: none
@@ -2663,6 +2705,10 @@ textarea.error + label.error
 .field
 	margin-top: 35px
 	+clr
+	&.field_xs
+		margin-top: 0
+		+r(767)
+			margin-top: 25px
 	+r(991)
 		margin-top: 15px
 
@@ -2699,13 +2745,13 @@ textarea.error + label.error
 				background: #0f98f2
 			a
 				color: #0f98f2
-	&.list_green
-		li
-			&:before
-				height: 4px
-				width: 4px
-				top: 8px
-				background: #7ac814
+	// &.list_green
+	// 	li
+	// 		&:before
+	// 			height: 4px
+	// 			width: 4px
+	// 			top: 8px
+	// 			background: #7ac814
 	li
 		margin-top: 5px
 		position: relative
@@ -2716,10 +2762,13 @@ textarea.error + label.error
 			position: absolute
 			content: ''
 			left: 0
-			top: 10px
-			height: 2px
-			width: 2px
-			background: #000
+			// height: 2px
+			// width: 2px
+			// background: #000
+			height: 4px
+			width: 4px
+			top: 8px
+			background: #7ac814
 			+border-radius(50%)
 // tags
 .tags
